@@ -1,11 +1,11 @@
 .container{
     width: 100%;
-    margin:auto;
     text-align: center;
 }
 
 header{
     color: black;
+    width: 100%;
     position: relative;
     height: 60px;
     padding: 10px;
@@ -14,7 +14,9 @@ header{
 header:hover{
     box-shadow: 0px 0px 5px black;
 }
-
+section{
+    width: 100%;
+}
 header .logo{
     position: absolute;
     left: 10px;
@@ -76,6 +78,7 @@ header .row .col-3 a{
 }
 .show-product{
     text-align: left;
+    padding: 30px;
 }
 .show-product .row .col-3{
     padding: 10px;
