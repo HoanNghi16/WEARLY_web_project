@@ -1,0 +1,91 @@
+#content p {
+margin-bottom: 0;
+}
+header{
+    color: black;
+    position: relative;
+    height: 60px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+header:hover{
+box-shadow: 0px 0px 5px black;
+}
+header .logo{
+    position: absolute;
+    left: 10px;
+}
+
+header .row .col-6 .nav .nav-item{
+    margin-left: 20px;
+}
+header .row .col-6 .nav .nav-item a{
+    color: black;
+    font-size: 18px;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif
+}
+header .row .col-3 a{
+    position: absolute;
+    top: 15px;
+    text-decoration: None;
+    color: black;
+    font-size: 18px;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif
+}
+#giohang button {
+width: 100%;
+}
+.set-quantity{
+width: 100px;
+}
+.set-quantity button{
+padding: auto;
+float: left;
+height: 40px;
+width: 30%;
+}
+.set-quantity input{
+float: left;
+height: 40px;
+width: 30%;
+}
+h3,
+p {
+font-family: Arial, Helvetica, sans-serif
+}
+.select-color img{
+width: 100px;
+margin-left: 20px;
+}
+#productimg img{
+width: 200px;
+}
+.btn-group-circle {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+margin-top: 10px;
+}
+.btn-circle {
+height: 40px;
+width: 40px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: bold;
+}
+.btn-circle.active {
+background-color: #0d6efd;
+color: #fff;
+}
+#soluong.btn-circle {
+width: 60px;
+height: 60px;
+border-radius: 20%;
+text-align: center;
+padding-left: 0;
+font-weight: bold;
+}
