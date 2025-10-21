@@ -11,7 +11,25 @@ header .logo{
     position: absolute;
     left: 10px;
 }
-
+.products{
+    margin: 20px 0;
+}
+.products h4{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.product-list .nav{
+    justify-content: center;
+}
+.product-list .nav .nav-item{
+    margin: 20px;
+}
+.product-list .nav .nav-item img{
+    width: 150px;
+    height: 150px;
+}
+.product-list .nav .nav-item span{
+    font-weight: bold;
+}
 header .row .col-6 .nav .nav-item{
     margin-left: 20px;
 }
