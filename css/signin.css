@@ -1,33 +1,33 @@
 body {
-background-image: url(../img/background.jpg);
-display: flex;
-justify-content: center;
-align-items: center;
+    background-image: url(../img/background.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .container {
-font-size: larger;
-display: flex;
-justify-content: center;
-align-items: center;
-margin: 50px;
-padding: 50px;
+    font-size: larger;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+    padding: 50px;
 }
 .active-box {
-border: 1px solid black;
-width: 500px;
-background-color: white;
-border-radius: 30px;
+    border: 1px solid black;
+    width: 500px;
+    background-color: white;
+    border-radius: 30px;
 }
 .active-box input {
-width: 100%;
-margin-bottom: 20px;
-line-height: 30px;
-border-radius: 20px;
-padding: 5px;
-padding-left: 20px;
-border: 0.5px solid black;
+    width: 100%;
+    margin-bottom: 20px;
+    line-height: 30px;
+    border-radius: 20px;
+    padding: 5px;
+    padding-left: 20px;
+    border: 0.5px solid black;
 }
 .radius {
-border-radius: 20px;
-line-height: 30px;
+    border-radius: 20px;
+    line-height: 30px;
 }
