@@ -12,16 +12,19 @@ function get_homeProducts(){
 }
 
 var homeProducts = get_homeProducts()
+console.log(homeProducts)
 function show_product(){
-    let i = 1
-    while (i<9){
+    let i = 1;
+    while (i<=9){
         document.getElementById(`Product${i}`).innerHTML= `
             <img src=${homeProducts[i-1]["image"]}>
             <h5 id="ProductName">${homeProducts[i-1]["name"]}</h5>
             <p id="ProductPrice">${homeProducts[i-1]["price"]}</p>
-        `
+            <p id="description">${homeProducts[i-1]["description"]}</p>
+        `;
         i++;
     }
 }
-show_product()
-
+document.addEventListener("DOMContentLoaded", () => {
+    show_product();
+});
