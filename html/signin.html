@@ -17,7 +17,8 @@
             <div class="active-box shadow p-4">
                 <ul class="nav nav-tabs mb-3 d-flex justify-content-around" id="signinTab">
                     <li class="nav-item">
-                        <a class="nav-link active" style="border-radius: 20px 20px 0 0;" data-bs-toggle="tab" href="#signup">
+                        <a class="nav-link active" style="border-radius: 20px 20px 0 0;" data-bs-toggle="tab"
+                            href="#signup">
                             Đăng nhập
                         </a>
                     </li>
@@ -49,10 +50,16 @@
 
                     <div class="tab-pane fade mt-5 mb-5" id="signin">
                         <form action="" class="m-3">
-                            <input type="text" name="name" placeholder="Nhập tên của bạn" /><br />
+                            <span id="error_HoTen" class="text-danger">*</span>
+                            <input type="text" id="HoTen" name="name" placeholder="Nhập tên của bạn" />
+                            <br />
+                            <span id="error_Email" class="text-danger">*</span>
                             <input type="text" name="email" placeholder="Nhập email hoặc Số điện thoại" />
+                            <br>
+                            <span id="error_NgaySinh" class="text-danger">*</span>
                             <label class="mb-2" for="birthday">Ngày sinh:</label>
                             <input type="date" name="birthday" /><br />
+                            <span class="text-danger" id="GioiTinh">*</span>
                             <div class="gender">
                                 <label for="gender">Giới tính:</label>
                                 <input type="radio" name="gender" value="Nam" style="width: 20px" />
@@ -60,10 +67,12 @@
                                 <input type="radio" name="gender" value="Nữ" style="width: 20px" />
                                 <label for="gender">Nữ</label> <br />
                             </div>
+                            <span class="text-danger" id="MatKhau">*</span>
                             <input type="password" name="pw" placeholder="Nhập mật khẩu" />
+                            <span class="text-danger" id="NhapLaiMatKhau">*</span>
                             <input type="password" name="pw2" placeholder="Nhập lại mật khẩu" />
                             <div class="d-grid mt-3">
-                                <button type="submit" class="radius btn btn-outline-dark">
+                                <button type="submit" class="radius btn btn-outline-dark" onclick="kiemTraDangKy()">
                                     ĐĂNG KÝ
                                 </button>
                             </div>
