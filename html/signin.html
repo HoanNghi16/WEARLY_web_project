@@ -9,6 +9,7 @@
     <script src="../jquery-3.7.1.js"></script>
     <script src="../js/bootstrap.js"></script>
     <link rel="stylesheet" href="../css/signin.css">
+    <script src="../js/sign.js"></script>
 </head>
 
 <body>
@@ -51,7 +52,8 @@
                     <div class="tab-pane fade mt-5 mb-5" id="signin">
                         <form action="" class="m-3">
                             <span id="error_HoTen" class="text-danger">*</span>
-                            <input type="text" id="HoTen" name="name" placeholder="Nhập tên của bạn" />
+                            <input type="text" id="HoTen" name="name" placeholder="Nhập tên của bạn"
+                                onkeyup="ktraHoTen()" />
                             <br />
                             <span id="error_Email" class="text-danger">*</span>
                             <input type="text" name="email" placeholder="Nhập email hoặc Số điện thoại" />

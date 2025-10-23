@@ -4,6 +4,10 @@ body {
     justify-content: center;
     align-items: center;
 }
+span{
+    font-size: 15px;
+    margin-bottom: 15px;
+}
 .container {
     font-size: larger;
     display: flex;
