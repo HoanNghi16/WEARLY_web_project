@@ -1,5 +1,6 @@
-[
+export const products = [
     {
+        "category": "pants",
         "id": "pants1",
         "name": "Quần dài ống suông vải sọc",
         "price": 199000,
@@ -8,6 +9,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category": "pants",
         "id": "pants2",
         "name": "Quần dài ống đứng lưng liền đính nơ hông",
         "price": 349000,
@@ -16,6 +18,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category": "pants",
         "id": "pants3",
         "name": "Quần dài ống rộng lưng thun",
         "price": 355000,
@@ -24,6 +27,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category": "pants",
         "id": "pants4",
         "name": "Quần short linen túi xéo nhấn li trước",
         "price": 295000,
@@ -32,6 +36,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category": "pants",
         "id": "pants5",
         "name": "Quần short lai cong 2 túi đính nơ",
         "price": 346000,
@@ -40,6 +45,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category": "pants",
         "id": "pants6",
         "name": "Quần thun ống suông đính hàng nơ",
         "price": 149000,
@@ -48,6 +54,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category": "pants",
         "id": "pants7",
         "name": "Quần tây ống suông luồn dây lưng gắn hạt gỗ",
         "price": 525000,
@@ -56,6 +63,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category": "jacket",
         "id": "jacket1",
         "name": "Áo khoác hoodie unisex",
         "price": 459000,
@@ -64,6 +72,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category": "jacket",
         "id": "jacket2",
         "name": "Áo hoodie nỉ cotton cao cấp",
         "price": 469000,
@@ -72,6 +81,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category": "jacket",
         "id": "jacket3",
         "name": "Áo khoác khóa kéo hai túi",
         "price": 499000,
@@ -80,6 +90,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category": "jacket",
         "id": "jacket4",
         "name": "Áo khoác jeans unisex",
         "price": 559000,
@@ -88,6 +99,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category": "jacket",
         "id": "jacket5",
         "name": "Áo khoác gió chống nước nhẹ",
         "price": 529000,
@@ -96,6 +108,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category": "jacket",
         "id": "jacket6",
         "name": "Áo khoác gió unisex form năng động",
         "price": 525000,
@@ -104,6 +117,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category":"shirt",
         "id": "shirt1",
         "name": "Áo thun cotton mềm mịn",
         "price": 199000,
@@ -112,6 +126,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category":"shirt",
         "id": "shirt2",
         "name": "Áo thun form regular cổ tròn",
         "price": 189000,
@@ -120,6 +135,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category":"shirt",
         "id": "shirt3",
         "name": "Áo thun cotton 220gsm thoáng khí",
         "price": 219000,
@@ -128,6 +144,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category":"shirt",
         "id": "shirt4",
         "name": "Áo thun oversize cổ tròn",
         "price": 239000,
@@ -136,6 +153,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category":"shirt",
         "id": "shirt5",
         "name": "Áo thun sọc ngang trắng xanh",
         "price": 249000,
@@ -144,6 +162,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category":"dress",
         "id": "dress1",
         "name": "Đầm vải polyeste tái chế",
         "price": 459000,
@@ -152,6 +171,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category":"dress",
         "id": "dress2",
         "name": "Đầm cotton pha elastan",
         "price": 399000,
@@ -160,6 +180,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category":"dress",
         "id": "dress3",
         "name": "Đầm vải pha visco tái chế",
         "price": 429000,
@@ -168,6 +189,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category":"dress",
         "id": "dress4",
         "name": "Đầm cotton phối polyeste tái chế",
         "price": 475000,
@@ -176,6 +198,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category":"dress",
         "id": "dress5",
         "name": "Đầm cotton phối polyeste",
         "price": 495000,
@@ -184,6 +207,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category":"dress",
         "id": "dress6",
         "name": "Đầm len pha polyeste tái chế",
         "price": 515000,
@@ -192,6 +216,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category":"dress",
         "id": "dress7",
         "name": "Đầm visco lanh phối polyeste",
         "price": 489000,
@@ -200,6 +225,7 @@
         "howtoclean": "Giặt máy nước lạnh, giặt nhẹ, Không giặt khô, Không sấy khô"
     },
     {
+        "category":"dress",
         "id": "dress8",
         "name": "Đầm polyeste tái chế 2 lớp",
         "price": 459000,
