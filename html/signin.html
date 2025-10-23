@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SIGN UP</title>
@@ -8,173 +9,70 @@
     <script src="../jquery-3.7.1.js"></script>
     <script src="../js/bootstrap.js"></script>
     <link rel="stylesheet" href="../css/signin.css">
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="container">
-      <section>
-        <div class="active-box shadow p-4">
-          <ul
-            class="nav nav-tabs mb-3 d-flex justify-content-around"
-            id="signinTab"
-          >
-            <li class="nav-item">
-              <a class="nav-link active" data-bs-toggle="tab" href="#signup"
-                >Đăng nhập</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="tab" href="#signin">Đăng ký</a>
-            </li>
-          </ul>
+        <section>
+            <div class="active-box shadow p-4">
+                <ul class="nav nav-tabs mb-3 d-flex justify-content-around" id="signinTab">
+                    <li class="nav-item">
+                        <a class="nav-link active" style="border-radius: 20px 20px 0 0;" data-bs-toggle="tab" href="#signup">
+                            Đăng nhập
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="border-radius: 20px 20px 0 0;" data-bs-toggle="tab" href="#signin">
+                            Đăng ký
+                        </a>
+                    </li>
+                </ul>
 
-          <div class="tab-content">
-            <div class="tab-pane fade show active mt-5 mb-5" id="signup">
-              <div>
-                <form>
-                  <input
-                    type="text"
-                    name="email"
-                    placeholder="Nhập email hoặc Số điện thoại"
-                  />
-                  <br />
-                  <input type="password" name="pw" placeholder="Mật khẩu" />
-                  <div class="forget-pw">
-                    <a href="#" class="text-decoration-none">Quên mật khẩu ?</a>
-                  </div>
-                </form>
-                <div class="d-grid mt-5">
-                  <button type="submit" class="radius btn btn-primary">
-                    ĐĂNG NHẬP
-                  </button>
+                <div class="tab-content">
+                    <div class="tab-pane fade show active mt-5 mb-5" id="signup">
+                        <div>
+                            <form>
+                                <input type="text" name="email" placeholder="Nhập email hoặc Số điện thoại" />
+                                <br />
+                                <input type="password" name="pw" placeholder="Mật khẩu" />
+                                <div class="forget-pw">
+                                    <a href="#" id="fp" class="text-decoration-none text-dark">Quên mật khẩu ?</a>
+                                </div>
+                            </form>
+                            <div class="d-grid mt-5">
+                                <button type="submit" class="radius btn btn-outline-dark">
+                                    ĐĂNG NHẬP
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade mt-5 mb-5" id="signin">
+                        <form action="" class="m-3">
+                            <input type="text" name="name" placeholder="Nhập tên của bạn" /><br />
+                            <input type="text" name="email" placeholder="Nhập email hoặc Số điện thoại" />
+                            <label class="mb-2" for="birthday">Ngày sinh:</label>
+                            <input type="date" name="birthday" /><br />
+                            <div class="gender">
+                                <label for="gender">Giới tính:</label>
+                                <input type="radio" name="gender" value="Nam" style="width: 20px" />
+                                <label for="gender">Nam</label>
+                                <input type="radio" name="gender" value="Nữ" style="width: 20px" />
+                                <label for="gender">Nữ</label> <br />
+                            </div>
+                            <input type="password" name="pw" placeholder="Nhập mật khẩu" />
+                            <input type="password" name="pw2" placeholder="Nhập lại mật khẩu" />
+                            <div class="d-grid mt-3">
+                                <button type="submit" class="radius btn btn-outline-dark">
+                                    ĐĂNG KÝ
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div
-                  class="other-signin d-flex align-items-center my-3 justify-content-center"
-                >
-                  <hr class="border border-dark border-2 opacity-100 w-25" />
-                  <span class="mx-2 fw-bold">Hoặc</span>
-                  <hr class="border border-dark border-2 opacity-100 w-25" />
-                </div>
-                <div class="method-links d-flex justify-content-center gap-5">
-                  <div class="method-link">
-                    <button
-                      type="button"
-                      class="radius btn btn-outline-danger align-items-center fs-5"
-                    >
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
-                        width="20"
-                        height="20"
-                        class="me-2"
-                      />
-                      Google
-                    </button>
-                  </div>
-                  <div class="method-link">
-                    <button
-                      type="button"
-                      class="radius btn btn-outline-primary align-items-center fs-5"
-                    >
-                      <img
-                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg"
-                        alt="Facebook"
-                        width="20"
-                        height="20"
-                        class="me-2"
-                      />
-                      Facebook
-                    </button>
-                  </div>
-                </div>
-              </div>
             </div>
-
-            <div class="tab-pane fade mt-5 mb-5" id="signin">
-              <form action="" class="m-3">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Nhập tên của bạn"
-                /><br />
-                <input
-                  type="text"
-                  name="email"
-                  placeholder="Nhập email hoặc Số điện thoại"
-                />
-
-                <label class="mb-2" for="birthday">Ngày sinh:</label>
-                <input type="date" name="birthday" /><br />
-                <div class="gender">
-                  <label for="gender">Giới tính:</label>
-                  <input
-                    type="radio"
-                    name="gender"
-                    value="Nam"
-                    style="width: 20px"
-                  />
-                  <label for="gender">Nam</label>
-                  <input
-                    type="radio"
-                    name="gender"
-                    value="Nữ"
-                    style="width: 20px"
-                  />
-                  <label for="gender">Nữ</label> <br />
-                </div>
-
-                <input type="password" name="pw" placeholder="Nhập mật khẩu" />
-                <input
-                  type="password"
-                  name="pw2"
-                  placeholder="Nhập lại mật khẩu"
-                />
-                <div class="d-grid mt-3">
-                  <button type="submit" class="radius btn btn-primary">
-                    ĐĂNG KÝ
-                  </button>
-                </div>
-              </form>
-              <div
-                class="other-signin d-flex align-items-center my-3 justify-content-center"
-              >
-                <hr class="border border-dark border-2 opacity-100 w-25" />
-                <span class="mx-2 fw-bold">Hoặc</span>
-                <hr class="border border-dark border-2 opacity-100 w-25" />
-              </div>
-              <div class="method-links d-flex justify-content-center gap-5">
-                <div class="method-link">
-                  <button
-                    type="button"
-                    class="radius btn btn-outline-danger align-items-center fs-5"
-                  >
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
-                      width="20"
-                      height="20"
-                      class="me-2"
-                    />
-                    Google
-                  </button>
-                </div>
-                <div class="method-link">
-                  <button
-                    type="button"
-                    class="radius btn btn-outline-primary align-items-center fs-5"
-                  >
-                    <img
-                      src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg"
-                      alt="Facebook"
-                      width="20"
-                      height="20"
-                      class="me-2"
-                    />
-                    Facebook
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        </section>
     </div>
-  </body>
+</body>
+
 </html>

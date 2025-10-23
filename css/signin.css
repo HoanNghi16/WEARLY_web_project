@@ -18,14 +18,24 @@ body {
     background-color: white;
     border-radius: 30px;
 }
+#fp{
+    font-size: 15px;
+}
 .active-box input {
     width: 100%;
     margin-bottom: 20px;
     line-height: 30px;
-    border-radius: 20px;
+    border-radius: 10px;
+    border:None;
     padding: 5px;
     padding-left: 20px;
-    border: 0.5px solid black;
+    border-bottom: 1px solid gray;
+}
+.nav li a{
+    color: black;
+}
+.nav li a:hover{
+    color: black;
 }
 .radius {
     border-radius: 20px;

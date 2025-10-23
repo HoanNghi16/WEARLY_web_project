@@ -92,7 +92,11 @@ header .row .col-3{
   align-items: center;
   gap: 8px;
 }
+.products nav ul li a:hover{
+    scale: 1.05;
+    transform: 0.5s;
 
+}
 .products{
     margin: 20px 0;
 }
