@@ -13,14 +13,18 @@ function get_homeProducts(){
 
 var homeProducts = get_homeProducts()
 console.log(homeProducts)
+function truncate(text, maxLength) {
+    return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
+}
 function show_product(){
     let i = 1;
     while (i<=9){
+        console.log()
         document.getElementById(`Product${i}`).innerHTML= `
-            <img src=${homeProducts[i-1]["image"]}>
+            <img src=${homeProducts[i-1]["image"]} style="width: 100%; height: 300px;margin: auto;object-fit: cover">
             <h5 id="ProductName">${homeProducts[i-1]["name"]}</h5>
             <p id="ProductPrice">${homeProducts[i-1]["price"]}</p>
-            <p id="description">${homeProducts[i-1]["description"]}</p>
+            <p id="description">${truncate(homeProducts[i-1]["description"], 30)}</p>
         `;
         i++;
     }
