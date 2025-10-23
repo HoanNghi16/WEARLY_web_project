@@ -19,7 +19,9 @@ header:hover{
   box-shadow: 0 6px 18px var(--shadow);
   transform: translateY(-1px);
 }
-
+section{
+  padding: 100px;
+}
 header .logo{
   position: relative; 
   display: flex;
