@@ -13,6 +13,11 @@ function chanageIcon(){
             </a>
         `;
     }
+    else{
+        usericon.innerHTML = `
+            <a href="../html/signin.html">SIGN UP/SIGN IN</a>
+            `
+    }
 }
 
 addEventListener("DOMContentLoaded", () => {
