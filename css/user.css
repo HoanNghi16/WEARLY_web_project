@@ -1,5 +1,6 @@
 *{
-  overflow-y: auto;}
+  max-width: 100%;
+}
 header{
   display: flex;
   align-items: center;

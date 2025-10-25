@@ -1,4 +1,9 @@
-
+*{
+  max-width: 100%;
+}
+.container{
+    width: 100%;
+}
 body{
     background-color: #f8f9fa;
 }
@@ -87,7 +92,9 @@ header .row .col-3{
   align-items: center;
   gap: 8px;
 }
-
+section{
+  width:100%;
+}
 .products{
     margin: 20px 0;
 }

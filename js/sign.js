@@ -165,7 +165,6 @@ function ktraDangNhap(){
         window.location.href = 'home.html';
         document.getElementById('error_DangNhap').innerHTML='';
         localStorage.setItem('currentUser', JSON.stringify(user));
-        console.log("✅ Đăng nhập thành công, chuẩn bị chuyển trang...");  
         return true;
     }
 }
