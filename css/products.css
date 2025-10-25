@@ -141,3 +141,48 @@ footer a{
 footer a{
     text-decoration: none;
 }
+
+.pagination .page-link {
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #000; 
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 38px;
+  margin: 0 5px;
+  transition: all 0.25s ease;
+}
+
+.pagination .page-link:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.pagination .active .page-link {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #000 !important;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+}
+
+.pagination .page-link:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.product-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.product-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.product-list .nav-item.active {
+    border-bottom: 3px solid gray;
+    transition: border-color 0.3s ease;
+}
