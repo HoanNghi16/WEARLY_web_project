@@ -7,6 +7,7 @@
     <title>SIGN UP</title>
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <script src="../js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/signin.css">
     <script src="../js/sign.js"></script>
 </head>
@@ -17,8 +18,7 @@
             <div class="active-box shadow p-4">
                 <ul class="nav nav-tabs mb-3 d-flex justify-content-around" id="signinTab">
                     <li class="nav-item">
-                        <a class="nav-link active" style="border-radius: 20px 20px 0 0;" data-bs-toggle="tab"
-                            href="#signup">
+                        <a class="nav-link active" style="border-radius: 20px 20px 0 0;" data-bs-toggle="tab" href="#signup">
                             Đăng nhập
                         </a>
                     </li>
@@ -35,16 +35,14 @@
                             <span id="error_DangNhap" class="text-danger"></span>
                             <form>
                                 <span class="text-danger" id="error_ID_DangNhap"></span>
-                                <input type="text" id="ID_DangNhap" name="email"
-                                    placeholder="Nhập email hoặc Số điện thoại" onkeyup="ktraID_DangNhap()" />
+                                <input type="text" id="ID_DangNhap" name="email" placeholder="Nhập email hoặc Số điện thoại" onkeyup="ktraID_DangNhap()" />
                                 <br />
                                 <input type="password" id="MatKhauDN" name="pw" placeholder="Mật khẩu" />
                                 <div class="forget-pw">
                                     <a href="#" id="fp" class="text-decoration-none text-dark">Quên mật khẩu ?</a>
                                 </div>
                                 <div class="d-grid mt-5">
-                                    <button class="radius btn btn-outline-dark" type="button" id="DangNhap"
-                                        onclick="ktraDangNhap()">
+                                    <button class="radius btn btn-outline-dark" type="button" id="DangNhap" onclick="ktraDangNhap()">
                                         ĐĂNG NHẬP
                                     </button>
                                 </div>
@@ -59,8 +57,7 @@
                             <input type="text" id="HoTen" placeholder="Nhập tên của bạn" onkeyup="ktraHoTen()" />
                             <br />
                             <span id="error_Email" class="text-danger">*</span>
-                            <input type="text" id="Email" placeholder="Nhập email hoặc Số điện thoại"
-                                onkeyup="ktraEmail()" />
+                            <input type="text" id="Email" placeholder="Nhập email hoặc Số điện thoại" onkeyup="ktraEmail()" />
                             <br>
 
                             <label class="mb-2" for="birthday">Ngày sinh:</label>
@@ -69,22 +66,17 @@
                             <span class="text-danger" id="error_GioiTinh">*</span>
                             <div class="gender">
                                 <label for="gender">Giới tính:</label>
-                                <input type="radio" name="gender" id='Nam' onchange="ktraGioiTinh()" value="Nam"
-                                    style="width: 20px" />
+                                <input type="radio" name="gender" id='Nam' onchange="ktraGioiTinh()" value="Nam" style="width: 20px" />
                                 <label for="gender">Nam</label>
-                                <input type="radio" name="gender" id="Nu" onchange="ktraGioiTinh()" value="Nữ"
-                                    style="width: 20px" />
+                                <input type="radio" name="gender" id="Nu" onchange="ktraGioiTinh()" value="Nữ" style="width: 20px" />
                                 <label for="gender">Nữ</label> <br />
                             </div>
                             <span class="text-danger" id="error_MatKhau">*</span>
-                            <input type="password" id="MatKhau" name="pw" placeholder="Nhập mật khẩu"
-                                onkeyup="ktraMatKhau()" />
+                            <input type="password" id="MatKhau" name="pw" placeholder="Nhập mật khẩu" onkeyup="ktraMatKhau()" />
                             <span class="text-danger" id="error_NhapLaiMatKhau">*</span>
-                            <input type="password" id="NhapLaiMatKhau" name="pw2" placeholder="Nhập lại mật khẩu"
-                                onkeyup="ktraNhapLai()" />
+                            <input type="password" id="NhapLaiMatKhau" name="pw2" placeholder="Nhập lại mật khẩu" onkeyup="ktraNhapLai()" />
                             <div class="d-grid mt-3">
-                                <button type="submit" id="DangKy" class="radius btn btn-outline-dark"
-                                    onclick="ktraDangKy()">
+                                <button type="submit" id="DangKy" class="radius btn btn-outline-dark" onclick="ktraDangKy()">
                                     ĐĂNG KÝ
                                 </button>
                             </div>
