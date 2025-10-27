@@ -103,7 +103,7 @@ header .row .col-3{
   margin-top: 20px;
   margin-bottom: 50px;
 }
-#buttonEdit{
+.buttonEdit{
   padding-right: 0px;
   text-align: right;
 }

@@ -1,5 +1,3 @@
-//Phần đăng ký và kiểm tra dữ liệu
-//Đăng ký thành công -> lưu thông tin người dùng vào localStorage với key là ID đăng nhập (email hoặc số điện thoại)
 function ktraHoTen(){
     let ten = /^[A-Z]{1}[a-z]*(\s[A-Z]{1}[a-z]*)*$/;
     let input_HoTen = document.getElementById('HoTen').value
@@ -112,69 +110,65 @@ function ktraNhapLai(){
         return true;
     }
 }
-
-
-function ktraDangKy(){
-    let HoTen = ktraHoTen();
-    let ID_DangNhap = ktraEmail();
-    let SDT = '';
-    let Email = '';
-    let sampleMail = /^[a-zA-Z0-9._%+-]+@gmail.com$/;
-    if (sampleMail.test(ID_DangNhap)){
-        Email = ID_DangNhap;
+var currentUser = JSON.parse(localStorage.getItem("currentUser"));
+function hide_password(pw){
+    let re = ''
+    for(let i = 0; i < pw.length;i++){
+        re += '*';
     }
-    else{
-        SDT = ID_DangNhap;
-    }
-
-    let NgaySinh = ktraNgaySinh();
-    let GioiTinh = ktraGioiTinh();
-    let MatKhau = ktraMatKhau();
-    ktraNhapLai();
-    if (!HoTen || !ID_DangNhap || !NgaySinh || !GioiTinh || !MatKhau){
-        document.getElementById('DangKy').type = 'button';
-        return false;
-    }
-    else{
-        let user = {HoTen : HoTen, ID : ID_DangNhap,Email : Email,SDT: SDT, NgaySinh : NgaySinh, GioiTinh : GioiTinh, MatKhau : MatKhau};
-        localStorage.setItem(`${ID_DangNhap}`, JSON.stringify(user));
-        document.getElementById('DangKy').type = 'submit';
-        return true;
-    }
+    return re;
 }
 
-//Phần đăng nhập
-//Kiểm tra ID đăng nhập có tồn tại không.
-function ktraID_DangNhap(){
-    let input_ID_DangNhap = document.getElementById('ID_DangNhap').value;
-    if (!localStorage.getItem(input_ID_DangNhap)){
-        document.getElementById('error_ID_DangNhap').innerHTML='Số điện thoại hoặc email không tồn tại.';
-        document.getElementById('error_DangNhap').innerHTML='';
-        return false
+function boostUserInfo(){
+    if (currentUser){
+        document.getElementById("userName").innerText = currentUser.HoTen;
+        document.getElementById("ID_DangNhap").innerText = currentUser.ID;
+        document.getElementById("userEmail").innerText = currentUser.Email;
+        document.getElementById("SDT").innerText = currentUser.SDT;
+        document.getElementById("NgaySinh").innerText = currentUser.NgaySinh;
+        document.getElementById("GioiTinh").innerText = currentUser.GioiTinh;
+        document.getElementById("MatKhau").innerText = hide_password(currentUser.MatKhau);
     }
-    else{
-        document.getElementById('error_ID_DangNhap').innerHTML='';
-        return input_ID_DangNhap;
+}
+function accept(attribute,newInfoID,htmlID){
+    var input_info = document.getElementById(newInfoID).value;
+    if (input_info.length >0){
+        currentUser[attribute] = input_info;
+        localStorage.setItem('currentUser', JSON.stringify(currentUser))
+        localStorage.setItem(currentUser['ID'], JSON.stringify(currentUser));  
+        document.getElementById(htmlID).innerHTML=currentUser[attribute];
     }
+    denied();
+    
+}
+function denied(){
+    location.reload()
 }
 
-function ktraDangNhap(){
-    let ID_DangNhap = ktraID_DangNhap();
-    let MatKhau = document.getElementById('MatKhauDN').value;
-    let user = JSON.parse(localStorage.getItem(ID_DangNhap));
-    if (!ID_DangNhap || MatKhau.length == 0){
-        document.getElementById('error_DangNhap').innerHTML='Vui lòng nhập đầy đủ thông tin.';
-        document.getElementById('error_ID_DangNhap').innerHTML='';
-        return false;
-    }
-    else if (user.MatKhau !== MatKhau){
-        document.getElementById('error_DangNhap').innerHTML='Sai mật khẩu. Vui lòng thử lại.';
-        return false;
-    }
-    else{
-        window.location.href = 'home.html';
-        document.getElementById('error_DangNhap').innerHTML='';
-        localStorage.setItem('currentUser', JSON.stringify(user));
-        return true;
-    }
+function suaHoTen(){
+    document.getElementById('userName').innerHTML=`
+        <input id="HoTen" type="text" style="width: 200px;" onkeyup="ktraHoTen()"> <br>
+        <span class="text-danger" id="error_HoTen" style="font-size: 14px;"></span>
+    `
+    document.getElementById('nutSuaHoTen').innerHTML = `
+        <button class="btn btn-dark" onclick="accept('HoTen','HoTen','userName')">lưu</button>
+        <button class="btn btn-outline-dark" onclick="denied()">hủy</button>
+    `
 }
+function suaEmail(){
+    document.getElementById('userEmail').innerHTML = `<input type="text" id="Email" style="width: 200px; height: 30px;"  onkeyup="ktraEmail()">
+     <span class="text-danger" id="error_Email" style="font-size: 14px;"></span>
+    `
+    document.getElementById('nutSuaEmail').innerHTML = `
+        <button class="btn btn-dark" onclick="accept('Email','Email','Email')">lưu</button>
+        <button class="btn btn-outline-dark" onclick="denied()">hủy</button>
+    `
+}
+function DangXuat(){
+    localStorage.setItem('currentUser', null)
+    window.location.href = '../html/home.html'
+}
+
+document.addEventListener('DOMContentLoaded',()=>{
+    boostUserInfo()
+})
