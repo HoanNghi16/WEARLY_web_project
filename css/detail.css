@@ -22,9 +22,7 @@ header:hover {
   box-shadow: 0 6px 18px var(--shadow);
   transform: translateY(-1px);
 }
-section {
-  padding: 100px;
-}
+
 header .logo {
   position: relative;
   display: flex;
@@ -99,18 +97,19 @@ header .row .col-3 {
   width: 100%;
 }
 .set-quantity {
-  width: 100px;
+  width: 110px;
+  margin-bottom: 50px;
 }
 .set-quantity button {
   padding: auto;
   float: left;
   height: 40px;
-  width: 30%;
+  width: 40px;
 }
 .set-quantity input {
   float: left;
   height: 40px;
-  width: 30%;
+  width: 20%;
 }
 h3,
 p {

@@ -18,25 +18,36 @@ function ktraHoTen(){
 
 function ktraEmail(){
     let email = /^[a-zA-Z0-9._%+-]+@gmail.com$/
-    let phone = /^0[3-9]{1}[0-9]{8}$/;
     let input_Email = document.getElementById('Email').value;
-    if (localStorage.getItem(input_Email)){
-        document.getElementById('error_Email').innerHTML='Email hoặc số điện thoại đã được sử dụng.'
-        return false
-    }
     if (input_Email.length == 0){
-        document.getElementById('error_Email').innerHTML='Vui lòng nhập email hoặc số điện thoại.'
-        return false
+        document.getElementById('error_Email').innerHTML = 'Vui lòng nhập email.'
     }
-    else if( !email.test(input_Email) && !phone.test(input_Email)){
-        document.getElementById('error_Email').innerHTML='ID đăng nhập sai (vidu@gmail.com hoặc 09XXXXXXXX)'
-        return false
+    if (email.test(input_Email)){
+        document.getElementById('error_Email').innerHTML = ''
+        return input_Email
     }
     else{
-        document.getElementById('error_Email').innerHTML='';
-        return input_Email;
+        document.getElementById('error_Email').innerHTML = 'Email sai (vd: example@gmail.com).'
+        return false
     }
 
+}
+
+function ktraSDT(){
+    let sdt = /^0[3-9]{1}[0-9]{8}$/;
+    let input_SDT = document.getElementById('SDT').value
+    if (input_SDT.length == 0){
+        document.getElementById('error_SDT').innerHTML = 'Vui lòng nhập số điện thoại'
+        return false
+    }
+    if (sdt.test(input_SDT)){
+        document.getElementById('error_SDT').innerHTML = ''
+        return input_SDT
+    }
+    else{
+        document.getElementById('error_SDT').innerHTML = 'Số điện thoại sai (vd: 03xxxxxxxx)'
+        return false
+    }
 }
 
 function ktraNgaySinh(){
@@ -124,15 +135,16 @@ function boostUserInfo(){
         document.getElementById("userName").innerText = currentUser.HoTen;
         document.getElementById("ID_DangNhap").innerText = currentUser.ID;
         document.getElementById("userEmail").innerText = currentUser.Email;
-        document.getElementById("SDT").innerText = currentUser.SDT;
-        document.getElementById("NgaySinh").innerText = currentUser.NgaySinh;
-        document.getElementById("GioiTinh").innerText = currentUser.GioiTinh;
-        document.getElementById("MatKhau").innerText = hide_password(currentUser.MatKhau);
+        document.getElementById("userSDT").innerText = currentUser.SDT;
+        document.getElementById("userNgaySinh").innerText = currentUser.NgaySinh;
+        document.getElementById("userGioiTinh").innerText = currentUser.GioiTinh;
+        document.getElementById("userMatKhau").innerText = hide_password(currentUser.MatKhau);
     }
 }
 function accept(attribute,newInfoID,htmlID){
     var input_info = document.getElementById(newInfoID).value;
-    if (input_info.length >0){
+    var err = document.getElementById(`error_${attribute}`).innerHTML
+    if (input_info.length >0 && err.length == 0 ){
         currentUser[attribute] = input_info;
         localStorage.setItem('currentUser', JSON.stringify(currentUser))
         localStorage.setItem(currentUser['ID'], JSON.stringify(currentUser));  
@@ -147,7 +159,7 @@ function denied(){
 
 function suaHoTen(){
     document.getElementById('userName').innerHTML=`
-        <input id="HoTen" type="text" style="width: 200px;" onkeyup="ktraHoTen()"> <br>
+        <input id="HoTen" type="text" style="width: 200px;" onkeyup="ktraHoTen()">
         <span class="text-danger" id="error_HoTen" style="font-size: 14px;"></span>
     `
     document.getElementById('nutSuaHoTen').innerHTML = `
@@ -157,13 +169,45 @@ function suaHoTen(){
 }
 function suaEmail(){
     document.getElementById('userEmail').innerHTML = `<input type="text" id="Email" style="width: 200px; height: 30px;"  onkeyup="ktraEmail()">
-     <span class="text-danger" id="error_Email" style="font-size: 14px;"></span>
+     <span class="text-danger" id="error_Email" style="font-size: 10px;"></span>
     `
     document.getElementById('nutSuaEmail').innerHTML = `
-        <button class="btn btn-dark" onclick="accept('Email','Email','Email')">lưu</button>
+        <button class="btn btn-dark" onclick="accept('Email','Email','userEmail')">lưu</button>
         <button class="btn btn-outline-dark" onclick="denied()">hủy</button>
     `
 }
+
+function suaSDT(){
+    document.getElementById('userSDT').innerHTML = `<input onkeyup="ktraSDT()" type="text" id="SDT" style="width: 200px; height: 30px;">
+     <span class="text-danger" id="error_SDT" style="font-size: 10px;"></span>
+    `
+    document.getElementById('nutSuaSDT').innerHTML = `
+        <button class="btn btn-dark" onclick="accept('SDT','SDT','userSDT')">lưu</button>
+        <button class="btn btn-outline-dark" onclick="denied()">hủy</button>
+    `
+}
+function suaNgaySinh(){
+    document.getElementById('userNgaySinh').innerHTML = `<input onkeyup="ktraNgaySinh()" type="date" id="NgaySinh" style="width: 200px; height: 30px;">
+     <span class="text-danger" id="error_NgaySinh" style="font-size: 10px;"></span>
+     `
+    document.getElementById('nutSuaNgaySinh').innerHTML = `
+        <button class="btn btn-dark" onclick="accept('NgaySinh','NgaySinh','userNgaySinh')">lưu</button>
+        <button class="btn btn-outline-dark" onclick="denied()">hủy</button>
+    `
+}
+function suaGioiTinh(){
+    document.getElementById('userGioiTinh').innerHTML = `
+        <label for="gender">Giới tính:</label>
+        <input type="radio" name="gender" id='Nam' onchange="ktraGioiTinh()" value="Nam" style="width: 20px" />
+        <label for="gender">Nam</label>
+        <input type="radio" name="gender" id="Nu" onchange="ktraGioiTinh()" value="Nữ" style="width: 20px" />
+        <label for="gender">Nữ</label> <br />`
+    document.getElementById('nutSuaGioiTinh').innerHTML =`
+        <button class="btn btn-dark" onclick="accept('GioiTinh','GioiTinh,'userGioiTinh')">lưu</button>
+        <button class="btn btn-outline-dark" onclick="denied()">hủy</button>
+    `
+}
+
 function DangXuat(){
     localStorage.setItem('currentUser', null)
     window.location.href = '../html/home.html'

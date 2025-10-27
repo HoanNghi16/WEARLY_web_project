@@ -14,11 +14,12 @@
 </head>
 
 <body>
-    <div class="container-fuid text-center">
+    <div class="container-fluid text-center">
         <header>
             <div class="row">
                 <div class="col-3">
-                    <a href="../html/home.html" class="logo"><img src="../img/logo.png" class="logo" style="width:100px"></a>
+                    <a href="../html/home.html" class="logo"><img src="../img/logo.png" class="logo"
+                            style="width:100px"></a>
                 </div>
                 <div class="col-6">
                     <nav>
@@ -34,12 +35,7 @@
             </div>
         </header>
         <section class="text-left">
-            <div class="row text-center">
-                <div class="col">
-                    <h2 class="title">Hồ sơ khách hàng</h2>
-                </div>
-            </div>
-            <div class="row" style="width:900px; margin:auto; margin-bottom: 50px;">
+            <div class="row" style="width:900px; margin:auto; margin-bottom: 50px; margin-top: 50px;">
                 <div class="col-2" style="text-align:left;margin-right: 0px">
                     <img id="userava" src="../img/icons/user.png" alt="user icon">
                 </div>
@@ -75,10 +71,10 @@
                                     <h6>Số điện thoại:</h6>
                                 </td>
                                 <td>
-                                    <h6 id="SDT">0999999999</h6>
+                                    <h6 id="userSDT">0999999999</h6>
                                 </td>
-                                <td class="buttonEdit">
-                                    <button class="btn btn-outline-dark" style="padding:5px;">
+                                <td class="buttonEdit" id="nutSuaSDT">
+                                    <button class="btn btn-outline-dark" style="padding:5px;" onclick="suaSDT()">
                                         sửa
                                     </button>
                                 </td>
@@ -88,10 +84,10 @@
                                     <h6>Ngày sinh:</h6>
                                 </td>
                                 <td>
-                                    <h6 id="NgaySinh">mm/dd/yyyy</h6>
+                                    <h6 id="userNgaySinh">mm/dd/yyyy</h6>
                                 </td>
-                                <td class="buttonEdit">
-                                    <button class="btn btn-outline-dark" style="padding:5px;">
+                                <td class="buttonEdit" id="nutSuaNgaySinh">
+                                    <button class="btn btn-outline-dark" style="padding:5px;" onclick="suaNgaySinh()">
                                         sửa
                                     </button>
                                 </td>
@@ -101,10 +97,10 @@
                                     <h6>Giới tính:</h6>
                                 </td>
                                 <td>
-                                    <h6 id="GioiTinh">Nam</h6>
+                                    <h6 id="userGioiTinh">Nam</h6>
                                 </td>
-                                <td class="buttonEdit">
-                                    <button class="btn btn-outline-dark" style="padding:5px;">
+                                <td class="buttonEdit" id="nutSuaGioiTinh">
+                                    <button onclick="suaGioiTinh()" class="btn btn-outline-dark" style="padding:5px;">
                                         sửa
                                     </button>
                                 </td>
@@ -114,7 +110,7 @@
                                     <h6>Mật khẩu:</h6>
                                 </td>
                                 <td>
-                                    <h6 id="MatKhau" type="password">abc</h6>
+                                    <h6 id="userMatKhau" type="password">abc</h6>
                                 </td>
                                 <td class="buttonEdit">
                                     <button class="btn btn-outline-dark" style="padding:5px;">
@@ -129,9 +125,6 @@
             <div class="row" style="width: 900px; margin:auto; margin-top: 50px;">
                 <div class="col-2">
                     <button class="btn btn-dark" style="width: 100%;" onclick="DangXuat()">Đăng xuất</button>
-                </div>
-                <div class="col-2">
-                    <button class="btn btn-outline-dark" style="width: 100%;">Sửa thông tin</button>
                 </div>
             </div>
         </section>

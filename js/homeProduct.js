@@ -30,9 +30,9 @@ function show_product() {
             <img src=${
               p["image"]
             } style="width: 100%; height: 300px;margin: auto;object-fit: cover; margin-bottom: 10px">
-            <h5 id="ProductName">${truncate(p["name"], 30)}</h5>
+            <h5 id="ProductName">${truncate(p["name"], 25)}</h5>
             <p id="ProductPrice">${show_price(p["price"])}</p>
-            <p id="description">${truncate(p["description"], 40)}</p>
+            <p id="description">${truncate(p["description"], 45)}</p>
         `;
     // Set the anchor href to include the product id so detail page can read it
     slot.setAttribute(

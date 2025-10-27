@@ -75,19 +75,14 @@ if (container) {
             <button class="btn btn-dark btn-circle" id="up" onclick="chinhsoluong(1)">+</button>
           </div>
 
-          <div class="row align-items-center mt-2">
-            <div class="col-12 text-end">
-              <p>xem còn showroom còn hàng không</p>
-            </div>
-          </div>
 
           <div id="giohang">
             <div class="row align-items-center mt-2">
               <div class="col-6">
-                <button type="button" class="btn btn-outline-primary">Thêm vào giỏ hàng</button>
+                <button type="button" class="btn btn-outline-dark">Thêm vào giỏ hàng</button>
               </div>
               <div class="col-6">
-                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#myModal">Mua ngay</button>
+                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#myModal">Mua ngay</button>
               </div>
             </div>
           </div>

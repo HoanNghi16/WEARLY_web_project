@@ -94,6 +94,10 @@ header .row .col-3{
   align-items: center;
   gap: 8px;
 }
+section{
+  margin-bottom: 100px;
+}
+
 #userava{
   width: 100px;
   height: 100px;
