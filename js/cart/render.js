@@ -8,7 +8,7 @@ function renderCart() {
     tbody.innerHTML = "";
 
     if (cart.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="7" class="text-center">🛍️ Giỏ hàng trống</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="7" class="text-center empty-cart">Giỏ hàng trống!</td></tr>`;
         subtotalAmount.textContent = "0";
         totalAmount.textContent = shipFee.textContent;
         return;
