@@ -1,6 +1,13 @@
 *{
   max-width: 100%;
 }
+*{
+  max-width: 100%;
+}
+.container{
+    width: 100%;
+    text-align: center;
+}
 header{
   display: flex;
   align-items: center;
@@ -86,4 +93,31 @@ header .row .col-3{
   display: inline-flex;
   align-items: center;
   gap: 8px;
+}
+#userava{
+  width: 100px;
+  height: 100px;
+  margin-right:0px;
+}
+.title{
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+#buttonEdit{
+  padding-right: 0px;
+  text-align: right;
+}
+button{
+  width: 50px;
+}
+.userName{
+ text-align: left;
+  margin-left: 0px;
+}
+.userID{
+  text-align: left;
+  margin-left: 0px;
+}
+footer a{
+    text-decoration: none;
 }

@@ -117,6 +117,16 @@ function ktraNhapLai(){
 function ktraDangKy(){
     let HoTen = ktraHoTen();
     let ID_DangNhap = ktraEmail();
+    let SDT = '';
+    let Email = '';
+    let sampleMail = /^[a-zA-Z0-9._%+-]+@gmail.com$/;
+    if (sampleMail.test(ID_DangNhap)){
+        Email = ID_DangNhap;
+    }
+    else{
+        SDT = ID_DangNhap;
+    }
+
     let NgaySinh = ktraNgaySinh();
     let GioiTinh = ktraGioiTinh();
     let MatKhau = ktraMatKhau();
@@ -126,7 +136,7 @@ function ktraDangKy(){
         return false;
     }
     else{
-        let user = {HoTen : HoTen, ID : ID_DangNhap, NgaySinh : NgaySinh, GioiTinh : GioiTinh, MatKhau : MatKhau};
+        let user = {HoTen : HoTen, ID : ID_DangNhap,Email : Email,SDT: SDT, NgaySinh : NgaySinh, GioiTinh : GioiTinh, MatKhau : MatKhau};
         localStorage.setItem(`${ID_DangNhap}`, JSON.stringify(user));
         document.getElementById('DangKy').type = 'submit';
         return true;

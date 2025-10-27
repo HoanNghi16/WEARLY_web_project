@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fuid text-center">
         <header>
             <div class="row">
                 <div class="col-3">
@@ -28,12 +28,111 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="col-3" id="usericon">
+                <div class="col-3" id="usericon" style="margin-right: 10px;">
                 </div>
             </div>
         </header>
-        <section>
-
+        <section class="text-left">
+            <div class="row text-center">
+                <div class="col">
+                    <h2 class="title">Hồ sơ khách hàng</h2>
+                </div>
+            </div>
+            <div class="row" style="width:900px; margin:auto; margin-bottom: 50px;">
+                <div class="col-2" style="text-align:left;margin-right: 0px">
+                    <img id="userava" src="../img/icons/user.png" alt="user icon">
+                </div>
+                <div class="col" style="margin-right: 0px;">
+                    <h3 class="userName" id="userName">sample Name</h3>
+                    <h5 class="userID" id="ID_DangNhap">sample_id</h5>
+                </div>
+                <div class="col" style="margin-left: 0px; text-align: left; padding-left: 0px;">
+                    <button class="btn btn-outline-dark" style="padding:5px;">
+                        sửa
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <table class="table" style="width:900px; margin:auto; text-align: left;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h6>Email:</h6>
+                                </td>
+                                <td>
+                                    <h6 id="Email">Examplemail@gmail.com</h6>
+                                </td>
+                                <td id="buttonEdit">
+                                    <button class="btn btn-outline-dark" style="padding:5px;">
+                                        sửa
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h6>Số điện thoại:</h6>
+                                </td>
+                                <td>
+                                    <h6 id="SDT">0999999999</h6>
+                                </td>
+                                <td id="buttonEdit">
+                                    <button class="btn btn-outline-dark" style="padding:5px;">
+                                        sửa
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h6>Ngày sinh:</h6>
+                                </td>
+                                <td>
+                                    <h6 id="NgaySinh">mm/dd/yyyy</h6>
+                                </td>
+                                <td id="buttonEdit">
+                                    <button class="btn btn-outline-dark" style="padding:5px;">
+                                        sửa
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h6>Giới tính:</h6>
+                                </td>
+                                <td>
+                                    <h6 id="GioiTinh">Nam</h6>
+                                </td>
+                                <td id="buttonEdit">
+                                    <button class="btn btn-outline-dark" style="padding:5px;">
+                                        sửa
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h6>Mật khẩu:</h6>
+                                </td>
+                                <td>
+                                    <h6 id="MatKhau" type="password">abc</h6>
+                                </td>
+                                <td id="buttonEdit">
+                                    <button class="btn btn-outline-dark" style="padding:5px;">
+                                        xem
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row" style="width: 900px; margin:auto; margin-top: 50px;">
+                <div class="col-2">
+                    <button class="btn btn-dark" style="width: 100%;">Đăng xuất</button>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-outline-dark" style="width: 100%;">Sửa thông tin</button>
+                </div>
+            </div>
         </section>
         <footer class="bg-dark text-light mt-5 pt-4 pb-4" style="padding-left: 100px;">
             <div class="row pl-20">
