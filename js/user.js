@@ -130,7 +130,7 @@ function show_password(pw){
 function boostUserInfo(){
     if (currentUser){
         document.getElementById("userName").innerText = currentUser.HoTen;
-        document.getElementById("ID_DangNhap").innerText = currentUser.ID;
+        document.getElementById("ID_DangNhap").innerText = currentUser.ID + ' (ID)';
         document.getElementById("userEmail").innerText = currentUser.Email;
         document.getElementById("userSDT").innerText = currentUser.SDT;
         document.getElementById("userNgaySinh").innerText = currentUser.NgaySinh;
@@ -215,7 +215,7 @@ function xemMatKhau(){
     document.getElementById('userMatKhau').innerHTML = show_password();
     document.getElementById('nutXemMatKhau').innerHTML = 
     `
-    <button class="btn btn-outline-dark" id="xem" style="padding:5px;"
+    <button class="btn btn-dark" id="xem" style="padding:5px;"
     onclick="suaMatKhau()">
         sửa
     </button>
