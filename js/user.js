@@ -80,14 +80,8 @@ function ktraGioiTinh(){
     else if (Nu.checked){
         input_GioiTinh = Nu.value;
     }
-    if (input_GioiTinh.length == 0){
-        document.getElementById('error_GioiTinh').innerHTML='Vui lòng chọn giới tính.'
-        return false
-    }
-    else{
-        document.getElementById('error_GioiTinh').innerHTML='';
-        return input_GioiTinh;
-    }
+    document.getElementById('error_GioiTinh').innerHTML='';
+    return input_GioiTinh;
 }
 
 function ktraMatKhau(){
@@ -129,6 +123,9 @@ function hide_password(pw){
     }
     return re;
 }
+function show_password(pw){
+    return currentUser.MatKhau;
+}
 
 function boostUserInfo(){
     if (currentUser){
@@ -142,9 +139,15 @@ function boostUserInfo(){
     }
 }
 function accept(attribute,newInfoID,htmlID){
-    var input_info = document.getElementById(newInfoID).value;
+    var input_info = ''
     var err = document.getElementById(`error_${attribute}`).innerHTML
-    if (input_info.length >0 && err.length == 0 ){
+    if (attribute == "GioiTinh"){
+        input_info = ktraGioiTinh()
+    }
+    else{
+        input_info = document.getElementById(newInfoID).value;
+    }
+    if (input_info && input_info.length >0 && err.length == 0 ){
         currentUser[attribute] = input_info;
         localStorage.setItem('currentUser', JSON.stringify(currentUser))
         localStorage.setItem(currentUser['ID'], JSON.stringify(currentUser));  
@@ -198,13 +201,49 @@ function suaNgaySinh(){
 function suaGioiTinh(){
     document.getElementById('userGioiTinh').innerHTML = `
         <label for="gender">Giới tính:</label>
-        <input type="radio" name="gender" id='Nam' onchange="ktraGioiTinh()" value="Nam" style="width: 20px" />
+        <input type="radio" name="gender" id="Nam" onchange="ktraGioiTinh()" value="Nam" style="width: 20px" />
         <label for="gender">Nam</label>
         <input type="radio" name="gender" id="Nu" onchange="ktraGioiTinh()" value="Nữ" style="width: 20px" />
-        <label for="gender">Nữ</label> <br />`
+        <label for="gender">Nữ</label> <br />
+        <span class="text-danger" style="font-size:10px" id="error_GioiTinh"></span>`
     document.getElementById('nutSuaGioiTinh').innerHTML =`
-        <button class="btn btn-dark" onclick="accept('GioiTinh','GioiTinh,'userGioiTinh')">lưu</button>
+        <button class="btn btn-dark" onclick="accept('GioiTinh','GioiTinh','userGioiTinh')">lưu</button>
         <button class="btn btn-outline-dark" onclick="denied()">hủy</button>
+    `
+}
+function xemMatKhau(){
+    document.getElementById('userMatKhau').innerHTML = show_password();
+    document.getElementById('nutXemMatKhau').innerHTML = 
+    `
+    <button class="btn btn-outline-dark" id="xem" style="padding:5px;"
+    onclick="suaMatKhau()">
+        sửa
+    </button>
+        <button class="btn btn-outline-dark" id="xem" style="padding:5px;"
+    onclick="anMatKhau()">
+        ẩn
+    </button>
+    `
+}
+
+function anMatKhau(){
+    document.getElementById('userMatKhau').innerHTML = hide_password(show_password());
+    denied()
+}
+function suaMatKhau(){
+    document.getElementById('userMatKhau').innerHTML=
+    `<input onkeyup="ktraMatKhau()" type="password" id="MatKhau" style="width: 200px; height: 30px;">
+     <span class="text-danger" id="error_MatKhau" style="font-size: 10px;"></span>
+     `
+    document.getElementById('nutXemMatKhau').innerHTML = `
+    <button class="btn btn-outline-dark" id="xem" style="padding:5px;"
+    onclick="accept('MatKhau','MatKhau','userMatKhau')">
+        lưu
+    </button>
+    <button class="btn btn-outline-dark" id="xem" style="padding:5px;"
+    onclick="denied()">
+        hủy
+    </button>
     `
 }
 
