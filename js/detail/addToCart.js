@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const addToCartBtn = document.querySelector("#giohang .btn-outline-primary");
+    const addToCartBtn = document.querySelector("#giohang .btn-outline-dark");
     if (!addToCartBtn) return;
 
     addToCartBtn.addEventListener("click", () => {

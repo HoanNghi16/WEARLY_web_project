@@ -3,6 +3,9 @@ function truncate(text, maxLength) {
 }
 function show_name(val){
     val = val.split(' ');
+    if (val.length == 1){
+        return val[0]
+    }
     console.log(val)
     return val[val.length-1]+ ' ' + val[0]
 }
