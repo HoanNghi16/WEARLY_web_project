@@ -99,22 +99,6 @@ function ktraMatKhau(){
         return input_MatKhau;
     }
 }
-function ktraNhapLai(){
-    let input_NhapLaiMatKhau = document.getElementById('NhapLaiMatKhau').value;
-    let input_MatKhau = ktraMatKhau();
-    if (input_NhapLaiMatKhau.length == 0){
-        document.getElementById('error_NhapLaiMatKhau').innerHTML='Vui lòng nhập lại mật khẩu.'
-        return false
-    }
-    if (input_NhapLaiMatKhau !== input_MatKhau){
-        document.getElementById('error_NhapLaiMatKhau').innerHTML='Mật khẩu không khớp.'
-        return false
-    }
-    else{
-        document.getElementById('error_NhapLaiMatKhau').innerHTML='';
-        return true;
-    }
-}
 var currentUser = JSON.parse(localStorage.getItem("currentUser"));
 function hide_password(pw){
     let re = ''
@@ -236,7 +220,7 @@ function suaMatKhau(){
      <span class="text-danger" id="error_MatKhau" style="font-size: 10px;"></span>
      `
     document.getElementById('nutXemMatKhau').innerHTML = `
-    <button class="btn btn-outline-dark" id="xem" style="padding:5px;"
+    <button class="btn btn-dark" id="xem" style="padding:5px;"
     onclick="accept('MatKhau','MatKhau','userMatKhau')">
         lưu
     </button>
