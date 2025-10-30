@@ -50,7 +50,8 @@ function renderProducts(page) {
     }
 
     pageProducts.forEach((p, index) => {
-        const col = document.createElement("div");
+        const col = document.createElement("a");
+        col.setAttribute("style", "text-decoration: none; color: inherit;");
         col.className = "col-md-3 mb-4 product-item";
         col.innerHTML = `
             <div class="card h-100 shadow-sm product-card" data-id="${p.id}" style="cursor:pointer;">
@@ -63,15 +64,12 @@ function renderProducts(page) {
                 </div>
             </div>
         `;
+        col.setAttribute(
+        "href",
+        `../html/detail.html?id=${encodeURIComponent(p.id)}`
+    );
         productList.appendChild(col);
         setTimeout(() => col.classList.add("show"), 100 * index);
-    });
-
-    document.querySelectorAll(".product-card").forEach(card => {
-        card.addEventListener("click", () => {
-            const id = card.getAttribute("data-id");
-            window.location.href = `../html/chitietsanpham.html?id=${id}`;
-        });
     });
 }
 
