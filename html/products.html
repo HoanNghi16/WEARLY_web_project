@@ -10,8 +10,8 @@
     <script src="../js/bootstrap.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/products.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
-    <script src="../js/boostUI.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />        <script src="../js/boostUI.js"></script>
+    <script type="module" src="../js/dsProducts.js"></script>
 </head>
 
 <body>
@@ -35,6 +35,7 @@
                 </div>
             </div>
         </header>
+
         <section>
             <div class="row mt-3">
                 <div class="col" class="path">
@@ -44,30 +45,31 @@
                     </h7>
                 </div>
             </div>
+
             <div class="row text-center">
                 <div class="col">
                     <nav class="product-list">
                         <ul class="nav">
                             <li class="nav-item">
-                                <a href="" class="nav-link">
+                                <a href="#" class="nav-link">
                                     <img src="../img/icons/dress.png" class="rounded-circle">
                                 </a>
                                 <span>Váy</span>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link">
+                                <a href="#" class="nav-link">
                                     <img src="../img/icons/shirt.png" class="rounded-circle">
                                 </a>
                                 <span>Áo</span>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link">
+                                <a href="#" class="nav-link">
                                     <img src="../img/icons/jacket.png" class="rounded-circle">
                                 </a>
                                 <span>Áo khoác</span>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link">
+                                <a href="#" class="nav-link">
                                     <img src="../img/icons/pants.png" class="rounded-circle">
                                 </a>
                                 <span>Quần</span>
@@ -76,6 +78,7 @@
                     </nav>
                 </div>
             </div>
+
             <div class="row text-center">
                 <div class="col-12" style="width:100%;">
                     <h5>TỔNG SẢN PHẨM</h5>
@@ -83,8 +86,8 @@
                         style="width: 100%; height: 550px; object-fit: cover; margin-right:0px;" alt="Banner">
                     <div class="d-flex align-items-center m-4">
                         <span class="ms-0 ">Sắp xếp theo</span>
-                        <a href="banchay.html" class="btn btn-outline-dark rounded-pill m-2 sort-btn">Bán Chạy</a>
-                        <a href="moinhat.html" class="btn btn-outline-dark rounded-pill m-2 sort-btn">Mới Nhất</a>
+                        <a href="#" class="btn btn-outline-dark rounded-pill m-2 sort-btn">Bán Chạy</a>
+                        <a href="#" class="btn btn-outline-dark rounded-pill m-2 sort-btn">Mới Nhất</a>
                         <select id="sortGia" class="form-select form-select-sm rounded-pill border-dark text-dark m-2"
                             style="width: 80px; height: 38px;">
                             <option value="">Giá</option>
@@ -94,83 +97,12 @@
                     </div>
                 </div>
             </div>
-            <div class="show-product">
-                <div class="row">
-                    <div class="col-3">
-                        <a href="../html/detail.html">
-                            <img src="../img/sample1.jpg">
-                            <h5>Áo dài</h5>
-                            <p>500.000đ</p>
-                        </a>
-                    </div>
-                    <div class="col-3">
-                        <a href="../html/detail.html">
-                            <img src="../img/sample1.jpg">
-                            <h5>Áo dài</h5>
-                            <p>500.000đ</p>
-                        </a>
-                    </div>
-                    <div class="col-3">
-                        <a href="../html/detail.html">
-                            <img src="../img/sample1.jpg">
-                            <h5>Áo dài</h5>
-                            <p>500.000đ</p>
-                        </a>
-                    </div>
-                    <div class="col-3">
-                        <a href="../html/detail.html">
-                            <img src="../img/sample1.jpg">
-                            <h5>Áo dài</h5>
-                            <p>500.000đ</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3">
-                        <a href="../html/detail.html">
-                            <img src="../img/sample1.jpg">
-                            <h5>Áo dài</h5>
-                            <p>500.000đ</p>
-                        </a>
-                    </div>
-                    <div class="col-3">
-                        <a href="../html/detail.html">
-                            <img src="../img/sample1.jpg">
-                            <h5>Áo dài</h5>
-                            <p>500.000đ</p>
-                        </a>
-                    </div>
-                    <div class="col-3">
-                        <a href="../html/detail.html">
-                            <img src="../img/sample1.jpg">
-                            <h5>Áo dài</h5>
-                            <p>500.000đ</p>
-                        </a>
-                    </div>
-                    <div class="col-3">
-                        <a href="../html/detail.html">
-                            <img src="../img/sample1.jpg">
-                            <h5>Áo dài</h5>
-                            <p>500.000đ</p>
-                        </a>
-                    </div>
-                </div>
+            <div id="productContainer" class="container mt-4">
+                <div class="row" id="productList"></div>
             </div>
-            <ul class="pagination justify-content-center">
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1">←</a>
-                </li>
-                <li class="page-item active"><a class="page-link" href="page1.html">1</a></li>
-                <li class="page-item"><a class="page-link" href="page2.html">2</a></li>
-                <li class="page-item"><a class="page-link" href="page3.html">3</a></li>
-                <li class="page-item"><a class="page-link" href="page4.html">4</a></li>
-                <li class="page-item"><a class="page-link" href="page5.html">5</a></li>
-                <li class="page-item"><a class="page-link" href="page6.html">6</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="page2.html">→</a>
-                </li>
-            </ul>
+            <ul class="pagination justify-content-center mt-4" id="pagination"></ul>
         </section>
+
         <footer class="bg-dark text-light mt-5 pt-4 pb-4" style="padding-left: 100px;">
             <div class="row pl-20">
                 <div class="col-md-4 mb-3">
@@ -192,62 +124,28 @@
                 <div class="col-md-2 mb-3">
                     <h5>Về chúng tôi</h5>
                     <ul class="list-unstyled">
-                        <li>
-                            <a href="#" class="text-light">Giới thiệu WEARLY</a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-light">Tuyển dụng</a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-light">Cảm hứng thời trang</a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-light">Danh sách cửa hàng</a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-light">Nhượng quyền thương hiệu</a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-light">Khách hàng thân thiết</a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-light">Chính sách giao hàng</a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-light">Chính sách bảo hành</a>
-                        </li>
+                        <li><a href="#" class="text-light">Giới thiệu WEARLY</a></li>
+                        <li><a href="#" class="text-light">Tuyển dụng</a></li>
+                        <li><a href="#" class="text-light">Cảm hứng thời trang</a></li>
+                        <li><a href="#" class="text-light">Danh sách cửa hàng</a></li>
+                        <li><a href="#" class="text-light">Nhượng quyền thương hiệu</a></li>
+                        <li><a href="#" class="text-light">Khách hàng thân thiết</a></li>
+                        <li><a href="#" class="text-light">Chính sách giao hàng</a></li>
+                        <li><a href="#" class="text-light">Chính sách bảo hành</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 mb-3">
                     <h5>Hỗ trợ khách hàng</h5>
                     <ul class="list-unstyled">
-                        <li>
-                            <a href="#" class="text-light">Liên hệ đến WEARLY</a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-light">Câu hỏi thường gặp</a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-light">Hướng dẫn tạo tài khoản</a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-light">Hướng dẫn đặt hàng</a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-light">Mua Online tại cửa hàng</a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-light">Hướng dẫn mua trước trả sau</a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-light">Quy định đổi/trả hàng</a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-light">Hướng dẫn đánh giá sản phẩm</a>
-                        </li>
-                        <li>
-                            <a href="#" class="text-light">Hướng dẫn xem ưu đãi</a>
-                        </li>
+                        <li><a href="#" class="text-light">Liên hệ đến WEARLY</a></li>
+                        <li><a href="#" class="text-light">Câu hỏi thường gặp</a></li>
+                        <li><a href="#" class="text-light">Hướng dẫn tạo tài khoản</a></li>
+                        <li><a href="#" class="text-light">Hướng dẫn đặt hàng</a></li>
+                        <li><a href="#" class="text-light">Mua Online tại cửa hàng</a></li>
+                        <li><a href="#" class="text-light">Hướng dẫn mua trước trả sau</a></li>
+                        <li><a href="#" class="text-light">Quy định đổi/trả hàng</a></li>
+                        <li><a href="#" class="text-light">Hướng dẫn đánh giá sản phẩm</a></li>
+                        <li><a href="#" class="text-light">Hướng dẫn xem ưu đãi</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 mb-3">
