@@ -16,19 +16,24 @@
     <div class="modal" id="datLaiMatKhau">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5>Đặt lại mật khẩu</h5>
-                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
-                </div>
                 <div class="modal-body">
+                    <h5 class="text-center">Đặt lại mật khẩu</h5>
+                    <span class="text-danger" id="error_DatLai"></span>
                     <form class="form-control">
-                        <input type="password" id="matKhauMoi" placeholder="Mật khẩu mới"><br>
-                        <input type="password" id="nhapLaiMatKhauMoi" placeholder="Nhập lại mật khẩu mới"><br>
-                        <input type="submit" id="DatLai" class="btn btn-outline-dark" value="Đặt lại mật khẩu">
+                        <span id="error_ID_NhapLai" class="text-danger">*</span>
+                        <input type="text" id="ID_NhapLai" placeholder="ID đăng nhập"
+                            onkeyup="ktraID_NhapLai(this.value)">
+                        <span id="error_MatKhauMoi" class="text-danger">*</span>
+                        <input type="password" id="MatKhauMoi" placeholder="Mật khẩu mới"
+                            onkeyup="ktraMatKhauMoi(this.value)"><br>
+                        <span id="error_NhapLaiMoi" class="text-danger">*</span>
+                        <input type="password" id="NhapLaiMoi" placeholder="Nhập lại mật khẩu mới"
+                            onkeyup="ktraNhapLaiMoi(this.value)"><br>
+                        <input type="button" id="DatLai" class="radius btn btn-dark" value="Đặt lại mật khẩu"
+                            onclick="datLaiMatKhau()">
+                        <input type="submit" id="Huy" class="radius btn btn-outline-dark" data-bs-dismiss="modal"
+                            data-bs-target="#datLaiMatKhau" value="Hủy">
                     </form>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-dark" data-bs-dismiss="modal">Hủy</button>
                 </div>
             </div>
         </div>
@@ -101,12 +106,12 @@
                             </div>
                             <span class="text-danger" id="error_MatKhau">*</span>
                             <input type="password" id="MatKhau" name="pw" placeholder="Nhập mật khẩu"
-                                onkeyup="ktraMatKhau()" />
+                                onkeyup="ktraMatKhau(this.value)" />
                             <span class="text-danger" id="error_NhapLaiMatKhau">*</span>
                             <input type="password" id="NhapLaiMatKhau" name="pw2" placeholder="Nhập lại mật khẩu"
-                                onkeyup="ktraNhapLai()" />
+                                onkeyup="ktraNhapLai(this.value)" />
                             <div class="d-grid mt-3">
-                                <button type="submit" id="DangKy" class="radius btn btn-outline-dark"
+                                <button type="button" id="DangKy" class="radius btn btn-outline-dark"
                                     onclick="ktraDangKy()">
                                     ĐĂNG KÝ
                                 </button>

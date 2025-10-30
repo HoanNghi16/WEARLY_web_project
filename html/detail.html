@@ -71,6 +71,15 @@
                 return false;
             }
         }
+        function ktraNhap() {
+            if (KiemTraEmail() && KiemTraDiaChi() && KiemTraSDT() && KiemTraTen()) {
+                alert('Đặt hàng thành công, đơn hàng sẽ sớm được giao đến tay bạn!');
+                location.reload()
+            }
+            else {
+                return false
+            }
+        }
     </script>
     <script src="../js/boostUI.js"></script>
     <style>
@@ -79,10 +88,13 @@
         .modal-body input[type="email"],
         .modal-body input[type="password"] {
             width: 100%;
-            box-sizing: border-box;
-            padding: 8px 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            margin-bottom: 20px;
+            line-height: 30px;
+            border-radius: 10px;
+            border: None;
+            padding: 5px;
+            padding-left: 20px;
+            border-bottom: 1px solid gray;
         }
     </style>
 </head>
@@ -222,36 +234,41 @@
     <div class="modal" id="myModal">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title">THÔNG TIN ĐẶT HÀNG</h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <label for="HoTen">Họ Và Tên</label><br />
-                    <input type="text" id="txtHoTen" placeholder="Le Quang Huy" required onblur="KiemTraTen()" />
-                    <span id="errTen" style="color: red; font-size: 14px"></span>
-                    <br /><br />
+                <div class="modal-body" style="padding: 30px;">
+                    <h5 class="text-center">THÔNG TIN ĐẶT HÀNG</h5>
+                    <form>
+                        <label for="HoTen">Họ Và Tên:&nbsp;</label>
+                        <span id="errTen" class="text-danger" style=" font-size: 14px"></span><br />
+                        <input type="text" id="txtHoTen" placeholder="Le Quang Huy" required onkeyup="KiemTraTen()" />
 
-                    <label for="SDT">Số Điện Thoại</label><br />
-                    <input type="text" id="txtSDT" placeholder="0388347682" required onblur="KiemTraSDT()" />
-                    <span id="errSDT" style="color: red; font-size: 14px"></span>
-                    <br /><br />
+                        <br /><br />
 
-                    <label for="Email">Email</label><br />
-                    <input type="text" id="txtEmail" placeholder="vidu@gmail.com" required onblur="KiemTraEmail()" />
-                    <span id="errEmail" style="color: red; font-size: 14px"></span>
-                    <br /><br />
+                        <label for="SDT">Số Điện Thoại:&nbsp;</label>
+                        <span id="errSDT" class="text-danger" style=" font-size: 14px"></span><br />
+                        <input type="text" id="txtSDT" placeholder="0388347682" required onkeyup="KiemTraSDT()" />
+                        <br /><br />
 
-                    <label for="DiaChi">Địa chỉ</label><br />
-                    <input type="text" id="txtDiaChi" placeholder="Tên đường/số nhà, Quận/Huyện, Tỉnh/Thành phố"
-                        required onblur="KiemTraDiaChi()" />
-                    <span id="errDiaChi" style="color: red; font-size: 14px"></span>
-                    <br /><br />
+                        <label for="Email">Email:&nbsp;</label>
+                        <span id="errEmail" class="text-danger" style=" font-size: 14px"></span><br />
+                        <input type="text" id="txtEmail" placeholder="vidu@gmail.com" required
+                            onkeyup="KiemTraEmail()" />
+
+                        <br /><br />
+
+                        <label for="DiaChi">Địa chỉ:&nbsp;</label><span id="errDiaChi" class="text-danger"
+                            style="font-size: 14px"></span><br />
+                        <input type="text" id="txtDiaChi" placeholder="Tên đường/số nhà, Quận/Huyện, Tỉnh/Thành phố"
+                            required onkeyup="KiemTraDiaChi()" />
+
+                        <br /><br />
+                    </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
-                        HOÀN THÀNH
+                    <button type="button" class="btn btn-outline-dark radius" data-bs-dismiss="modal"
+                        onclick="ktraNhap()">
+                        Hoàn thành
                     </button>
+                    <button class="btn btn-dark radius">Hủy</button>
                 </div>
             </div>
         </div>
@@ -259,4 +276,5 @@
     <script src="../js/detail/addToCart.js">
     </script>
 </body>
+
 </html>
