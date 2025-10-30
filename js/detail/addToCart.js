@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     addToCartBtn.addEventListener("click", () => {
         const productName = document.querySelector("h3").innerText.trim();
-        const priceText = document.querySelector("#content p:nth-of-type(2)").innerText.trim();
+        const priceText = document.querySelector("#content h4").innerText.trim();
         const price = parseInt(priceText.replace(/[^\d]/g, ""));
         const image = document.querySelector(".col-5 img").src;
         const quantity = parseInt(document.getElementById("quantity").value) || 1;

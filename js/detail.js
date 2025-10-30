@@ -41,7 +41,7 @@ if (container) {
           <br />
           <div id="content">
             <p style="margin-bottom: 20px;">SKU: ${product.id}</p>
-            <h3 class="text-danger">${formatPrice(product.price)}</h3>
+            <h4 class="text-danger">${formatPrice(product.price)}</h4>
           </div>
           <br />
 
