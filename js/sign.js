@@ -225,6 +225,9 @@ function datLaiMatKhau(){
     let NL = ktraNhapLaiMoi(document.getElementById('NhapLaiMoi').value);
     if(!ID || !MK || !NL){
         document.getElementById('error_DatLai').innerHTML = 'Vui lòng nhập đầy đủ thông tin.';
+        document.getElementById('error_ID_NhapLai').innerHTML=''
+        document.getElementById('error_MatKhauMoi').innerHTML=''
+        document.getElementById('error_gNhapLaiMoi').innerHTML=''
         return false;
         
         
