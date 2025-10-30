@@ -13,6 +13,26 @@
 </head>
 
 <body>
+    <div class="modal" id="datLaiMatKhau">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Đặt lại mật khẩu</h5>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-control">
+                        <input type="password" id="matKhauMoi" placeholder="Mật khẩu mới"><br>
+                        <input type="password" id="nhapLaiMatKhauMoi" placeholder="Nhập lại mật khẩu mới"><br>
+                        <input type="submit" id="DatLai" class="btn btn-outline-dark" value="Đặt lại mật khẩu">
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-dark" data-bs-dismiss="modal">Hủy</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <section>
             <div class="active-box shadow p-4">
@@ -40,8 +60,10 @@
                                     placeholder="Nhập email hoặc Số điện thoại" onkeyup="ktraID_DangNhap()" />
                                 <br />
                                 <input type="password" id="MatKhauDN" name="pw" placeholder="Mật khẩu" />
-                                <div class="forget-pw">
-                                    <a href="#" id="fp" class="text-decoration-none text-dark">Quên mật khẩu ?</a>
+                                <div class="quenMatKhau">
+                                    <a href="#" id="fp" class="text-decoration-none text-dark" data-bs-toggle="modal"
+                                        data-bs-target="#datLaiMatKhau">
+                                        Quên mật khẩu?</a>
                                 </div>
                                 <div class="d-grid mt-5">
                                     <button class="radius btn btn-outline-dark" type="button" id="DangNhap"

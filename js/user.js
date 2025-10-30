@@ -231,11 +231,6 @@ function suaMatKhau(){
     `
 }
 
-function DangXuat(){
-    localStorage.setItem('currentUser', null)
-    window.location.href = '../html/home.html'
-}
-
 document.addEventListener('DOMContentLoaded',()=>{
     boostUserInfo()
 })

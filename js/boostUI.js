@@ -9,7 +9,10 @@ function show_name(val){
     console.log(val)
     return val[val.length-1]+ ' ' + val[0]
 }
-
+function DangXuat(){
+    localStorage.setItem('currentUser', null)
+    window.location.href = '../html/home.html'
+}
 function chanageIcon(){
     let usericon = document.getElementById('usericon');
     let currentUser = JSON.parse(localStorage.getItem('currentUser'));
