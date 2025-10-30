@@ -31,9 +31,9 @@ function show_product() {
                 <img src="${p.image}" class="card-img-top"
                     style="width: 100%; height: 300px; object-fit: cover;">
                 <div class="card-body">
-                    <h5 class="card-title">${truncate(p.name, 30)}</h5>
+                    <h5 class="card-title">${truncate(p.name, 25)}</h5>
                     <p class="card-text text-danger fw-bold">${show_price(p.price)}</p>
-                    <p class="card-text text-muted">${truncate(p.description, 40)}</p>
+                    <p class="card-text text-muted">${truncate(p.description, 35)}</p>
                 </div>
             </div>
         `;
