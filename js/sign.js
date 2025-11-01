@@ -81,8 +81,8 @@ function ktraGioiTinh(){
     }
 }
 
-function ktraMatKhau(){
-    let input_MatKhau = document.getElementById('MatKhau').value;
+function ktraMatKhau(val){
+    let input_MatKhau = document.getElementById('MatKhau').value || val;
     if (input_MatKhau.length == 0){
         document.getElementById('error_MatKhau').innerHTML='Vui lòng nhập mật khẩu.'
         return false
@@ -96,9 +96,8 @@ function ktraMatKhau(){
         return input_MatKhau;
     }
 }
-function ktraNhapLai(){
-    let input_NhapLaiMatKhau = document.getElementById('NhapLaiMatKhau').value;
-    let input_MatKhau = ktraMatKhau();
+function ktraNhapLai(input_NhapLaiMatKhau){
+    let input_MatKhau = document.getElementById('MatKhau').value
     if (input_NhapLaiMatKhau.length == 0){
         document.getElementById('error_NhapLaiMatKhau').innerHTML='Vui lòng nhập lại mật khẩu.'
         return false
@@ -129,9 +128,9 @@ function ktraDangKy(){
 
     let NgaySinh = ktraNgaySinh();
     let GioiTinh = ktraGioiTinh();
-    let MatKhau = ktraMatKhau();
-    ktraNhapLai();
-    if (!HoTen || !ID_DangNhap || !NgaySinh || !GioiTinh || !MatKhau){
+    let MatKhau = ktraMatKhau(document.getElementById('MatKhau').value);
+    
+    if (!HoTen || !ID_DangNhap || !NgaySinh || !GioiTinh || !MatKhau || !ktraNhapLai(document.getElementById('NhapLaiMatKhau').value)){
         document.getElementById('DangKy').type = 'button';
         return false;
     }
@@ -145,8 +144,8 @@ function ktraDangKy(){
 
 //Phần đăng nhập
 //Kiểm tra ID đăng nhập có tồn tại không.
-function ktraID_DangNhap(){
-    let input_ID_DangNhap = document.getElementById('ID_DangNhap').value;
+function ktraID_DangNhap(val){
+    let input_ID_DangNhap = document.getElementById('ID_DangNhap').value || val;
     if (!localStorage.getItem(input_ID_DangNhap)){
         document.getElementById('error_ID_DangNhap').innerHTML='Số điện thoại hoặc email không tồn tại.';
         document.getElementById('error_DangNhap').innerHTML='';
@@ -177,4 +176,70 @@ function ktraDangNhap(){
         localStorage.setItem('currentUser', JSON.stringify(user));
         return true;
     }
+}
+
+//Quên mật khẩu
+function ktraMatKhauMoi(input_MatKhauMoi){
+    if(input_MatKhauMoi.length == 0){
+        document.getElementById('error_MatKhauMoi').innerHTML = 'Vui lòng nhập mật khẩu mới.'
+        return false;
+    }
+    else if(input_MatKhauMoi.length<6){
+        document.getElementById('error_MatKhauMoi').innerHTML = 'Mật khẩu phải có ít nhất 6 kí tự.'
+        return false;
+    }
+    else{
+        document.getElementById('error_MatKhauMoi').innerHTML = ''
+        return input_MatKhauMoi;
+    }
+}
+function ktraID_NhapLai(input_ID_NhapLai){
+    if (!localStorage[input_ID_NhapLai]){
+        document.getElementById('error_ID_NhapLai').innerHTML = 'ID đăng nhập không tồn tại.'
+        return false;
+    }
+    else{
+        document.getElementById('error_ID_NhapLai').innerHTML = ''
+        return input_ID_NhapLai;
+    }
+
+}
+function ktraNhapLaiMoi(input_NhapLaiMoi){
+    let input_MatKhauMoi = document.getElementById('MatKhauMoi').value
+    if (input_NhapLaiMoi.length == 0){
+        document.getElementById('error_NhapLaiMoi').innerHTML = 'Vui lòng nhập lại mật khẩu mới.'
+        return false;
+    }
+    else if (input_NhapLaiMoi != input_MatKhauMoi){
+        document.getElementById('error_NhapLaiMoi').innerHTML = 'Mật khẩu không khớp.'
+        return false;
+    }
+    else{
+        document.getElementById('error_NhapLaiMoi').innerHTML = ''
+        return true;
+    }
+}
+function datLaiMatKhau(){
+    let ID = ktraID_NhapLai(document.getElementById('ID_NhapLai').value);
+    let MK = ktraMatKhauMoi(document.getElementById('MatKhauMoi').value);
+    let NL = ktraNhapLaiMoi(document.getElementById('NhapLaiMoi').value);
+    if(!ID || !MK || !NL){
+        document.getElementById('error_DatLai').innerHTML = 'Vui lòng nhập đầy đủ thông tin.';
+        document.getElementById('error_ID_NhapLai').innerHTML=''
+        document.getElementById('error_MatKhauMoi').innerHTML=''
+        document.getElementById('error_gNhapLaiMoi').innerHTML=''
+        return false;
+        
+        
+    }
+    else{
+        document.getElementById('error_DatLai').innerHTML = ''
+        let user = JSON.parse(localStorage[ID])
+        user.MatKhau = MK;
+        localStorage[ID] = JSON.stringify(user)
+        alert('Cập nhật mật khẩu thành công.')
+        location.reload();
+        return true;
+    }
+    
 }

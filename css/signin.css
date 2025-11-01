@@ -28,7 +28,10 @@ span{
 #fp{
     font-size: 15px;
 }
-.active-box input {
+.form-control{
+    border: none;
+}
+input {
     width: 100%;
     margin-bottom: 20px;
     line-height: 30px;

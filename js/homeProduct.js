@@ -27,12 +27,15 @@ function show_product() {
     const slot = document.getElementById(`Product${i + 1}`);
     if (!slot || !p) continue;
     slot.innerHTML = `
-            <img src=${
-              p["image"]
-            } style="width: 100%; height: 300px;margin: auto;object-fit: cover; margin-bottom: 10px">
-            <h5 id="ProductName">${truncate(p["name"], 25)}</h5>
-            <p id="ProductPrice">${show_price(p["price"])}</p>
-            <p id="description">${truncate(p["description"], 45)}</p>
+            <div class="card h-100 shadow-sm product-card" data-id="${p.id}" style="cursor:pointer;">
+                <img src="${p.image}" class="card-img-top"
+                    style="width: 100%; height: 300px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">${truncate(p.name, 25)}</h5>
+                    <p class="card-text text-danger fw-bold">${show_price(p.price)}</p>
+                    <p class="card-text text-muted">${truncate(p.description, 35)}</p>
+                </div>
+            </div>
         `;
     // Set the anchor href to include the product id so detail page can read it
     slot.setAttribute(

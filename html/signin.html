@@ -13,6 +13,31 @@
 </head>
 
 <body>
+    <div class="modal" id="datLaiMatKhau">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h5 class="text-center">Đặt lại mật khẩu</h5>
+                    <span class="text-danger" id="error_DatLai"></span>
+                    <form class="form-control">
+                        <span id="error_ID_NhapLai" class="text-danger">*</span>
+                        <input type="text" id="ID_NhapLai" placeholder="ID đăng nhập"
+                            onkeyup="ktraID_NhapLai(this.value)">
+                        <span id="error_MatKhauMoi" class="text-danger">*</span>
+                        <input type="password" id="MatKhauMoi" placeholder="Mật khẩu mới"
+                            onkeyup="ktraMatKhauMoi(this.value)"><br>
+                        <span id="error_NhapLaiMoi" class="text-danger">*</span>
+                        <input type="password" id="NhapLaiMoi" placeholder="Nhập lại mật khẩu mới"
+                            onkeyup="ktraNhapLaiMoi(this.value)"><br>
+                        <input type="button" id="DatLai" class="radius btn btn-dark" value="Đặt lại mật khẩu"
+                            onclick="datLaiMatKhau()">
+                        <input type="submit" id="Huy" class="radius btn btn-outline-dark" data-bs-dismiss="modal"
+                            data-bs-target="#datLaiMatKhau" value="Hủy">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <section>
             <div class="active-box shadow p-4">
@@ -40,8 +65,10 @@
                                     placeholder="Nhập email hoặc Số điện thoại" onkeyup="ktraID_DangNhap()" />
                                 <br />
                                 <input type="password" id="MatKhauDN" name="pw" placeholder="Mật khẩu" />
-                                <div class="forget-pw">
-                                    <a href="#" id="fp" class="text-decoration-none text-dark">Quên mật khẩu ?</a>
+                                <div class="quenMatKhau">
+                                    <a href="#" id="fp" class="text-decoration-none text-dark" data-bs-toggle="modal"
+                                        data-bs-target="#datLaiMatKhau">
+                                        Quên mật khẩu?</a>
                                 </div>
                                 <div class="d-grid mt-5">
                                     <button class="radius btn btn-outline-dark" type="button" id="DangNhap"
@@ -79,12 +106,12 @@
                             </div>
                             <span class="text-danger" id="error_MatKhau">*</span>
                             <input type="password" id="MatKhau" name="pw" placeholder="Nhập mật khẩu"
-                                onkeyup="ktraMatKhau()" />
+                                onkeyup="ktraMatKhau(this.value)" />
                             <span class="text-danger" id="error_NhapLaiMatKhau">*</span>
                             <input type="password" id="NhapLaiMatKhau" name="pw2" placeholder="Nhập lại mật khẩu"
-                                onkeyup="ktraNhapLai()" />
+                                onkeyup="ktraNhapLai(this.value)" />
                             <div class="d-grid mt-3">
-                                <button type="submit" id="DangKy" class="radius btn btn-outline-dark"
+                                <button type="button" id="DangKy" class="radius btn btn-outline-dark"
                                     onclick="ktraDangKy()">
                                     ĐĂNG KÝ
                                 </button>
