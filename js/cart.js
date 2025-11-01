@@ -10,9 +10,12 @@ window.addEventListener("DOMContentLoaded", function () {
   function formatMoney(amount) {
     return amount.toLocaleString("vi-VN") + "₫";
   }
+  function get_float_money(moneyStr) {
+    return parseFloat(moneyStr.replace(/[₫,.]/g, ""));
+  }
   function updateRowSubtotal(index) {
-    var qty = parseInt(qtyInputs[index].value);
-    var price = parseInt(priceCells[index].textContent);
+    var qty = get_float_money(qtyInputs[index].value);
+    var price = get_float_money(priceCells[index].textContent);
     var subtotal = qty * price;
     subtotalCells[index].textContent = subtotal;
     updateTotal();
@@ -25,12 +28,12 @@ window.addEventListener("DOMContentLoaded", function () {
       for (var i = 0; i < checked.length; i++) {
         var cb = checked[i];
         var row = cb.closest("tr");
-        var rowSubtotal = parseInt(row.querySelector(".subtotal").textContent);
+        var rowSubtotal = get_float_money(row.querySelector(".subtotal").textContent);
         subtotal += rowSubtotal;
       }
     } else {
       for (var j = 0; j < subtotalCells.length; j++) {
-        subtotal += parseInt(subtotalCells[j].textContent);
+        subtotal += get_float_money(subtotalCells[j].textContent);
       }
     }
     var total = subtotal + shipFee;

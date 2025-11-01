@@ -2,372 +2,278 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>chitetsanpham</title>
-  <link rel="stylesheet" href="../css/bootstrap.css" />
-  <script src="../jquery-3.7.1.js"></script>
-  <script src="../js/bootstrap.js"></script>
-  <link rel="stylesheet" href="../css/detail.css" />
-  <script>
-    function chinhsoluong(n) {
-      let s = document.getElementById("quantity");
-      let num = Number(s.value);
-      if (num + n >= 0) {
-        document.getElementById("quantity").value = num + n;
-        return;
-      } else {
-        document.getElementById("quantity").value = 0;
-        return;
-      }
-    }
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wearly-Details</title>
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/jquery-3.7.1.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../css/detail.css" />
+    <script>
+        function chinhsoluong(n) {
+            let s = document.getElementById("quantity");
+            let num = Number(s.value);
+            if (num + n >= 0) {
+                document.getElementById("quantity").value = num + n;
+                return;
+            } else {
+                document.getElementById("quantity").value = 0;
+                return;
+            }
+        }
 
-    function KiemTraTen() {
-      var Ten = /^[A-Z]{1}[A-Za-z]*(\s[A-Z]{1}[A-Za-z]*)+$/;
-      var hoTen = document.getElementById("txtHoTen").value.trim();
-      if (Ten.test(hoTen)) {
-        document.getElementById("errTen").innerHTML = "";
-        return true;
-      } else {
-        document.getElementById("errTen").innerHTML = "Tên sai định dạng";
-        return false;
-      }
-    }
+        function KiemTraTen() {
+            var Ten = /^[A-Z]{1}[A-Za-z]*(\s[A-Z]{1}[A-Za-z]*)+$/;
+            var hoTen = document.getElementById("txtHoTen").value.trim();
+            if (Ten.test(hoTen)) {
+                document.getElementById("errTen").innerHTML = "";
+                return true;
+            } else {
+                document.getElementById("errTen").innerHTML = "Tên sai định dạng";
+                return false;
+            }
+        }
 
-    function KiemTraSDT() {
-      var sdtPattern = /^(0|\+84)[0-9]{9}$/;
-      var sdt = document.getElementById("txtSDT").value.trim();
-      if (sdtPattern.test(sdt)) {
-        document.getElementById("errSDT").innerHTML = "";
-        return true;
-      } else {
-        document.getElementById("errSDT").innerHTML = "Số điện thoại sai";
-        return false;
-      }
-    }
+        function KiemTraSDT() {
+            var sdtPattern = /^(0|\+84)[0-9]{9}$/;
+            var sdt = document.getElementById("txtSDT").value.trim();
+            if (sdtPattern.test(sdt)) {
+                document.getElementById("errSDT").innerHTML = "";
+                return true;
+            } else {
+                document.getElementById("errSDT").innerHTML = "Số điện thoại sai";
+                return false;
+            }
+        }
 
-    function KiemTraDiaChi() {
-      var diaChi = document.getElementById("txtDiaChi").value.trim();
-      if (diaChi.length === 0) {
-        document.getElementById("errDiaChi").innerHTML =
-          "Vui lòng nhập địa chỉ";
-        return false;
-      } else {
-        document.getElementById("errDiaChi").innerHTML = "";
-        return true;
-      }
-    }
+        function KiemTraDiaChi() {
+            var diaChi = document.getElementById("txtDiaChi").value.trim();
+            if (diaChi.length === 0) {
+                document.getElementById("errDiaChi").innerHTML =
+                    "Vui lòng nhập địa chỉ";
+                return false;
+            } else {
+                document.getElementById("errDiaChi").innerHTML = "";
+                return true;
+            }
+        }
 
-    function KiemTraEmail() {
-      var email = document.getElementById("txtEmail").value.trim();
-      var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-      if (emailPattern.test(email)) {
-        document.getElementById("errEmail").innerHTML = "";
-        return true;
-      } else {
-        document.getElementById("errEmail").innerHTML = "Email không hợp lệ";
-        return false;
-      }
-    }
-  </script>
-  <style>
-    .modal-body input[type="text"],
-    .modal-body input[type="number"],
-    .modal-body input[type="email"],
-    .modal-body input[type="password"] {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 8px 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-  </style>
+        function KiemTraEmail() {
+            var email = document.getElementById("txtEmail").value.trim();
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (emailPattern.test(email)) {
+                document.getElementById("errEmail").innerHTML = "";
+                return true;
+            } else {
+                document.getElementById("errEmail").innerHTML = "Email không hợp lệ";
+                return false;
+            }
+        }
+        function ktraNhap() {
+            if (KiemTraEmail() && KiemTraDiaChi() && KiemTraSDT() && KiemTraTen()) {
+                alert('Đặt hàng thành công, đơn hàng sẽ sớm được giao đến tay bạn!');
+                location.reload()
+            }
+            else {
+                return false
+            }
+        }
+    </script>
+    <script src="../js/boostUI.js"></script>
+    <style>
+        .modal-body input[type="text"],
+        .modal-body input[type="number"],
+        .modal-body input[type="email"],
+        .modal-body input[type="password"] {
+            width: 100%;
+            margin-bottom: 20px;
+            line-height: 30px;
+            border-radius: 10px;
+            border: None;
+            padding: 5px;
+            padding-left: 20px;
+            border-bottom: 1px solid gray;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="container-fuid text-center">
-    <header>
-      <div class="row">
-        <div class="col-3">
-          <a href="../html/home.html" class="logo"><img src="../img/logo.png" class="logo" style="width: 100px" /></a>
-        </div>
-        <div class="col-6">
-          <nav>
-            <ul class="nav justify-content-center">
-              <li class="nav-item">
-                <a class="nav-link" href="../html/home.html">TRANG CHỦ</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../html/products.html">SẢN PHẨM</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../html/cart.html">GIỎ HÀNG</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="col-3">
-          <a href="../html/signin.html">SIGN UP/SIGN IN</a>
-        </div>
-      </div>
-    </header>
-    <section>
-      <div class="row">
-        <div class="col-2 m-0" id="productimg">
-          <img src="../img/sample1.jpg" alt="" class="m-1" />
-          <img src="../img/sample1.jpg" alt="" class="m-1" />
-          <img src="../img/sample1.jpg" alt="" class="m-1" />
-          <img src="../img/sample1.jpg" alt="" class="m-1" />
-        </div>
-
-        <div class="col-5">
-          <img src="../img/sample1.jpg" alt="" class="w-100" />
-        </div>
-
-        <div class="col-5">
-          <h3>Áo khoác thun tay dài phối bèo cột dây</h3>
-          <br />
-          <div id="content">
-            <p>SKU: TRST122924SNA01</p>
-            <p>355,000₫</p>
-          </div>
-          <br />
-
-          <div class="select-color">
-            <p>Chọn màu</p>
-            <img src="../img/sample1.jpg" alt="" />
-            <img src="../img/sample1.jpg" alt="" />
-            <img src="../img/sample1.jpg" alt="" />
-          </div>
-
-          <br /><br />
-
-          <p>Chọn size</p>
-          <div id="nut" class="btn-group-circle">
-            <button type="button" class="btn btn-outline-primary btn-circle">
-              S
-            </button>
-            <button type="button" class="btn btn-outline-primary btn-circle">
-              M
-            </button>
-            <button type="button" class="btn btn-outline-primary btn-circle">
-              L
-            </button>
-            <button type="button" class="btn btn-outline-primary btn-circle">
-              XL
-            </button>
-          </div>
-
-          <p class="mt-3">Chọn số lượng</p>
-          <div class="set-quantity">
-            <button class="btn btn-outline-primary" id="down" onclick="chinhsoluong(-1)">
-              -
-            </button>
-            <input class="inputsoluong" type="number" id="quantity" value="0" />
-            <button class="btn btn-outline-primary" id="up" onclick="chinhsoluong(1)">
-              +
-            </button>
-          </div>
-
-          <div class="row align-items-center mt-2">
-            <div class="col-12 text-end">
-              <p>xem còn showroom còn hàng không</p>
-            </div>
-          </div>
-
-          <div id="giohang">
-            <div class="row align-items-center mt-2">
-              <div class="col-6">
-                <button type="button" class="btn btn-outline-primary">
-                  Thêm vào giỏ hàng
-                </button>
-              </div>
-              <div class="col-6">
-                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#myModal">
-                  Mua ngay
-                </button>
-              </div>
-            </div>
-          </div>
-          <br />
-
-          <div class="accordion mt-3" id="accordionExample">
-            <div class="accordion-item" style="background-color: white">
-              <h2 class="accordion-header">
-                <button class="accordion-button bg-white text-dark collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne">
-                  Chi tiết sản phẩm
-                </button>
-              </h2>
-              <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                <div class="accordion-body" style="background-color: white">
-                  <p>- Quần dài ống suông vải sọc.</p>
-                  <p>- Chất liệu sọc thêu xanh, thoáng mát, có độ mềm cao.</p>
+    <div class="container-fluid text-center">
+        <header>
+            <div class="row">
+                <div class="col-3">
+                    <a href="../html/home.html" class="logo"><img src="../img/logo.png" class="logo"
+                            style="width: 100px" /></a>
                 </div>
-              </div>
-            </div>
-
-            <div class="accordion-item" style="background-color: white">
-              <h2 class="accordion-header">
-                <button class="accordion-button bg-white text-dark collapsed" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo">
-                  Hướng dẫn bảo quản
-                </button>
-              </h2>
-              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                <div class="accordion-body" style="background-color: white">
-                  <ul style="list-style-type: none; padding-left: 0">
-                    <li>
-                      Giặt tay để tránh bay màu hoặc xù lông, ủi nhiệt độ bình
-                      thường.
-                    </li>
-                    <li>
-                      Không vắt hoặc xoắn mạnh vì điều này có thể gây ra nếp
-                      nhăn.
-                    </li>
-                    <li>Phơi, ủi mặt trái sản phẩm.</li>
-                  </ul>
+                <div class="col-6">
+                    <nav>
+                        <ul class="nav justify-content-center">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../html/home.html">TRANG CHỦ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../html/products.html">SẢN PHẨM</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../html/cart.html">GIỎ HÀNG</a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-              </div>
+                <div class="col-3" id="usericon" style="margin-right: 10px;">
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer class="bg-dark text-light mt-5 pt-4 pb-4" style="padding-left: 100px;">
-      <div class="row pl-20">
-        <div class="col-md-4 mb-3">
-          <div class="mt-3">
-            <p>Thương hiệu thời trang Wearly</p>
-            <p>Địa chỉ: TP.Hồ Chí Minh</p>
-            <p><a href="#" class="text-light">Chính sách bảo mật</a></p>
-            <p>
-              <a href="#" class="text-light">Các điều khoản và điều kiện</a>
-            </p>
-          </div>
-          <div class="mt-2">
-            <a href="#"><i class="bi bi-facebook text-light me-2"></i></a>
-            <a href="#"><i class="bi bi-instagram text-light me-2"></i></a>
-            <a href="#"><i class="bi bi-tiktok text-light me-2"></i></a>
-            <a href="#"><i class="bi bi-youtube text-light me-2"></i></a>
-          </div>
-        </div>
-        <div class="col-md-2 mb-3">
-          <h5>Về chúng tôi</h5>
-          <ul class="list-unstyled">
-            <li>
-              <a href="#" class="text-light">Giới thiệu WEARLY</a>
-            </li>
-            <li>
-              <a href="#" class="text-light">Tuyển dụng</a>
-            </li>
-            <li>
-              <a href="#" class="text-light">Cảm hứng thời trang</a>
-            </li>
-            <li>
-              <a href="#" class="text-light">Danh sách cửa hàng</a>
-            </li>
-            <li>
-              <a href="#" class="text-light">Nhượng quyền thương hiệu</a>
-            </li>
-            <li>
-              <a href="#" class="text-light">Khách hàng thân thiết</a>
-            </li>
-            <li>
-              <a href="#" class="text-light">Chính sách giao hàng</a>
-            </li>
-            <li>
-              <a href="#" class="text-light">Chính sách bảo hành</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-md-3 mb-3">
-          <h5>Hỗ trợ khách hàng</h5>
-          <ul class="list-unstyled">
-            <li>
-              <a href="#" class="text-light">Liên hệ đến WEARLY</a>
-            </li>
-            <li>
-              <a href="#" class="text-light">Câu hỏi thường gặp</a>
-            </li>
-            <li>
-              <a href="#" class="text-light">Hướng dẫn tạo tài khoản</a>
-            </li>
-            <li>
-              <a href="#" class="text-light">Hướng dẫn đặt hàng</a>
-            </li>
-            <li>
-              <a href="#" class="text-light">Mua Online tại cửa hàng</a>
-            </li>
-            <li>
-              <a href="#" class="text-light">Hướng dẫn mua trước trả sau</a>
-            </li>
-            <li>
-              <a href="#" class="text-light">Quy định đổi/trả hàng</a>
-            </li>
-            <li>
-              <a href="#" class="text-light">Hướng dẫn đánh giá sản phẩm</a>
-            </li>
-            <li>
-              <a href="#" class="text-light">Hướng dẫn xem ưu đãi</a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-md-3 mb-3">
-          <h5>Liên lạc</h5>
-          <p>Đặt hàng trực tuyến (8h-21h)<br />
-            <a href="tel:1900636942" class="text-info">1900 636942</a>
-          </p>
-          <p>
-            Chăm sóc khách hàng <br />
-            <a href="tel:1900636940" class="text-info">1900 636940</a>
-          </p>
-          <p>
-            <a href="mailto:support.wearly@tmpfashion.vn" class="text-info">support.wearly@tmpfashion.vn</a>
-          </p>
-        </div>
-      </div>
-    </footer>
-  </div>
+        </header>
+        <section>
+            <!-- Product detail will be injected here by js/detail.js -->
+            <div id="product-detail" class="container my-4"></div>
+        </section>
 
-  <!----------------------MODAL-------------->
-  <div class="modal" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h2 class="modal-title">THÔNG TIN ĐẶT HÀNG</h2>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          <label for="HoTen">Họ Và Tên</label><br />
-          <input type="text" id="txtHoTen" placeholder="Le Quang Huy" required onblur="KiemTraTen()" />
-          <span id="errTen" style="color: red; font-size: 14px"></span>
-          <br /><br />
-
-          <label for="SDT">Số Điện Thoại</label><br />
-          <input type="text" id="txtSDT" placeholder="0388347682" required onblur="KiemTraSDT()" />
-          <span id="errSDT" style="color: red; font-size: 14px"></span>
-          <br /><br />
-
-          <label for="Email">Email</label><br />
-          <input type="text" id="txtEmail" placeholder="vidu@gmail.com" required onblur="KiemTraEmail()" />
-          <span id="errEmail" style="color: red; font-size: 14px"></span>
-          <br /><br />
-
-          <label for="DiaChi">Địa chỉ</label><br />
-          <input type="text" id="txtDiaChi" placeholder="Tên đường/số nhà, Quận/Huyện, Tỉnh/Thành phố" required
-            onblur="KiemTraDiaChi()" />
-          <span id="errDiaChi" style="color: red; font-size: 14px"></span>
-          <br /><br />
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
-            HOÀN THÀNH
-          </button>
-        </div>
-      </div>
+        <!-- Load the module that reads ?id= and renders the product -->
+        <script type="module" src="../js/detail.js"></script>
+        <footer class="bg-dark text-light mt-5 pt-4 pb-4" style="padding-left: 100px">
+            <div class="row pl-20">
+                <div class="col-md-4 mb-3">
+                    <div class="mt-3">
+                        <p>Thương hiệu thời trang Wearly</p>
+                        <p>Địa chỉ: TP.Hồ Chí Minh</p>
+                        <p><a href="#" class="text-light">Chính sách bảo mật</a></p>
+                        <p>
+                            <a href="#" class="text-light">Các điều khoản và điều kiện</a>
+                        </p>
+                    </div>
+                    <div class="mt-2">
+                        <a href="#"><i class="bi bi-facebook text-light me-2"></i></a>
+                        <a href="#"><i class="bi bi-instagram text-light me-2"></i></a>
+                        <a href="#"><i class="bi bi-tiktok text-light me-2"></i></a>
+                        <a href="#"><i class="bi bi-youtube text-light me-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h5>Về chúng tôi</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#" class="text-light">Giới thiệu WEARLY</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-light">Tuyển dụng</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-light">Cảm hứng thời trang</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-light">Danh sách cửa hàng</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-light">Nhượng quyền thương hiệu</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-light">Khách hàng thân thiết</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-light">Chính sách giao hàng</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-light">Chính sách bảo hành</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h5>Hỗ trợ khách hàng</h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#" class="text-light">Liên hệ đến WEARLY</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-light">Câu hỏi thường gặp</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-light">Hướng dẫn tạo tài khoản</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-light">Hướng dẫn đặt hàng</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-light">Mua Online tại cửa hàng</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-light">Hướng dẫn mua trước trả sau</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-light">Quy định đổi/trả hàng</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-light">Hướng dẫn đánh giá sản phẩm</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-light">Hướng dẫn xem ưu đãi</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h5>Liên lạc</h5>
+                    <p>
+                        Đặt hàng trực tuyến (8h-21h)<br />
+                        <a href="tel:1900636942" class="text-info">1900 636942</a>
+                    </p>
+                    <p>
+                        Chăm sóc khách hàng <br />
+                        <a href="tel:1900636940" class="text-info">1900 636940</a>
+                    </p>
+                    <p>
+                        <a href="mailto:support.wearly@tmpfashion.vn" class="text-info">support.wearly@tmpfashion.vn</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
     </div>
-  </div>
+
+    <!----------------------MODAL-------------->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body" style="padding: 30px;">
+                    <h5 class="text-center">THÔNG TIN ĐẶT HÀNG</h5>
+                    <form>
+                        <label for="HoTen">Họ Và Tên:&nbsp;</label>
+                        <span id="errTen" class="text-danger" style=" font-size: 14px"></span><br />
+                        <input type="text" id="txtHoTen" placeholder="Le Quang Huy" required onkeyup="KiemTraTen()" />
+
+                        <br /><br />
+
+                        <label for="SDT">Số Điện Thoại:&nbsp;</label>
+                        <span id="errSDT" class="text-danger" style=" font-size: 14px"></span><br />
+                        <input type="text" id="txtSDT" placeholder="0388347682" required onkeyup="KiemTraSDT()" />
+                        <br /><br />
+
+                        <label for="Email">Email:&nbsp;</label>
+                        <span id="errEmail" class="text-danger" style=" font-size: 14px"></span><br />
+                        <input type="text" id="txtEmail" placeholder="vidu@gmail.com" required
+                            onkeyup="KiemTraEmail()" />
+
+                        <br /><br />
+
+                        <label for="DiaChi">Địa chỉ:&nbsp;</label><span id="errDiaChi" class="text-danger"
+                            style="font-size: 14px"></span><br />
+                        <input type="text" id="txtDiaChi" placeholder="Tên đường/số nhà, Quận/Huyện, Tỉnh/Thành phố"
+                            required onkeyup="KiemTraDiaChi()" />
+
+                        <br /><br />
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark radius" data-bs-dismiss="modal"
+                        onclick="ktraNhap()">
+                        Hoàn thành
+                    </button>
+                    <button class="btn btn-dark radius">Hủy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/detail/addToCart.js">
+    </script>
 </body>
 </html>

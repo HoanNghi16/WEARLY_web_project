@@ -1,12 +1,12 @@
 *{
   max-width: 100%;
 }
+*{
+  max-width: 100%;
+}
 .container{
     width: 100%;
     text-align: center;
-}
-body{
-    background-color: #f8f9fa;
 }
 header{
   display: flex;
@@ -94,58 +94,33 @@ header .row .col-3{
   align-items: center;
   gap: 8px;
 }
-.products nav ul li a:hover{
-    scale: 1.05;
-    transform: 0.5s;
+section{
+  margin-bottom: 100px;
+}
 
+#userava{
+  width: 100px;
+  height: 100px;
+  margin-right:0px;
 }
-.products{
-    margin: 20px 0;
+.title{
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
-.products h4{
-    font-family: Arial, Helvetica, sans-serif;
+.buttonEdit{
+  padding-right: 0px;
+  text-align: right;
 }
-.product-list .nav{
-    justify-content: center;
+button{
+  width: 50px;
 }
-.product-list .nav .nav-item{
-    margin: 20px;
+.userName{
+ text-align: left;
+  margin-left: 0px;
 }
-.product-list .nav .nav-item img{
-    width: 150px;
-    height: 150px;
-}
-.product-list .nav .nav-item span{
-    font-weight: bold;
-}
-.show-product a{
-    text-decoration: none;
-    color: black;
-}
-.show-product .row .col-10 h4{
-    font-family: Arial, Helvetica, sans-serif;
-}
-.show-product .row .col-2 a{
-    color: rgb(119, 18, 18);
-    text-decoration: None;
-}
-.show-product .row{
-    padding: 20px;
-}
-.show-product img{
-    width: 100%;
-    margin: auto;
-}
-.show-product{
-    text-align: left;
-    padding: 100px;
-}
-.show-product .row .col-3{
-    padding: 10px;
-}
-.show-product .row .col-3:hover{
-    transition: 0.5s;
-    box-shadow: 1px 1px 1px 1px black;
+.userID{
+  text-align: left;
+  margin-left: 0px;
 }
 footer a{
     text-decoration: none;

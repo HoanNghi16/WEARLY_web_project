@@ -2,194 +2,203 @@
 <html lang="vi">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Giỏ hàng của bạn</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../css/cart.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wearly-YourCart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/cart.css" />
+    <script src="../js/boostUI.js"></script>
+    <script src="../js/cart.js"></script>
 </head>
 
 <body>
-  <div class="container-fuid">
-    <header>
-      <div class="row">
-        <div class="col-3">
-          <a href="../html/home.html" class="logo"><img src="../img/logo.png" class="logo" style="width: 100px" /></a>
-        </div>
-        <div class="col-6">
-          <nav>
-            <ul class="nav justify-content-center">
-              <li class="nav-item">
-                <a class="nav-link" href="../html/home.html">TRANG CHỦ</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../html/products.html">SẢN PHẨM</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../html/cart.html">GIỎ HÀNG</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="col-3">
-          <a href="../html/signin.html">SIGN UP/SIGN IN</a>
-        </div>
-      </div>
-    </header>
-    <section>
-      <h2 class="mb-4">🛒 Giỏ hàng của bạn</h2>
-      <div class="row">
-        <div class="col-lg-8">
-          <table class="table cart-table align-middle">
-            <thead class="table-dark">
-              <tr>
-                <th>Chọn</th>
-                <th>Ảnh</th>
-                <th>Sản phẩm</th>
-                <th>Giá</th>
-                <th>Số lượng</th>
-                <th>Tổng</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><input type="checkbox" class="select-item" /></td>
-                <td>
-                  <img class="img rounded-circle" src="../img/sample1.jpg" alt="sp1" />
-                </td>
-                <td>Áo thun</td>
-                <td class="price">150000</td>
-
-                <td>
-                  <input type="number" value="1" min="1" class="quantity form-control w-50" />
-                </td>
-                <td class="subtotal">150000</td>
-                <td><button class="btn-remove">Xóa</button></td>
-              </tr>
-              <tr>
-                <td><input type="checkbox" class="select-item" /></td>
-                <td>
-                  <img class="img rounded-circle" src="../img/sample1.jpg" alt="sp2" />
-                </td>
-                <td>Váy</td>
-                <td class="price">800000</td>
-                <td>
-                  <input type="number" value="2" min="1" class="quantity form-control w-50" />
-                </td>
-                <td class="subtotal">1600000</td>
-                <td><button class="btn-remove">Xóa</button></td>
-              </tr>
-            </tbody>
-          </table>
-          <a href="../html/products.html" class="btn btn-outline-shop mt-3">Mua sắm ngay</a>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="cart-summary">
-            <h5>Tóm tắt đơn hàng</h5>
-            <hr />
-            <div class="d-flex justify-content-between mb-2">
-              <span>Tạm tính:</span>
-              <strong class="subtotalAmount">1750000</strong>
+    <div class="container-fluid">
+        <header>
+            <div class="row">
+                <div class="col-3">
+                    <a href="../html/home.html" class="logo"><img src="../img/logo.png" class="logo"
+                            style="width: 100px" /></a>
+                </div>
+                <div class="col-6">
+                    <nav>
+                        <ul class="nav justify-content-center">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../html/home.html">TRANG CHỦ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../html/products.html">SẢN PHẨM</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../html/cart.html">GIỎ HÀNG</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-3" id="usericon" style="margin-right: 10px;">
+                </div>
             </div>
-            <div class="d-flex justify-content-between mb-2">
-              <span>Phí vận chuyển:</span>
-              <strong class="shipfee">30000</strong>
-            </div>
-            <hr />
-            <div class="d-flex justify-content-between mb-3">
-              <span><b>Tổng cộng:</b></span>
-              <strong class="total text-danger fs-5">1780000</strong>
-            </div>
-            <button class="btn btn-checkout w-100 py-2">Thanh toán</button>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer class="bg-dark text-light mt-5 pt-4 pb-4">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 mb-3">
-            <div class="mt-3">
-              <p>Thương hiệu thời trang Wearly</p>
-              <p>Địa chỉ: TP.Hồ Chí Minh</p>
-              <p><a href="#" class="text-light">Chính sách bảo mật</a></p>
-              <p>
-                <a href="#" class="text-light">Các điều khoản và điều kiện</a>
-              </p>
-            </div>
-            <div class="mt-2">
-              <a href="#"><i class="bi bi-facebook text-light me-2"></i></a>
-              <a href="#"><i class="bi bi-instagram text-light me-2"></i></a>
-              <a href="#"><i class="bi bi-tiktok text-light me-2"></i></a>
-              <a href="#"><i class="bi bi-youtube text-light me-2"></i></a>
-            </div>
-          </div>
+        </header>
+        <section>
+            <h2 class="mb-4">Giỏ hàng của bạn</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <table class="table cart-table align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Chọn</th>
+                                <th>Ảnh</th>
+                                <th>Sản phẩm</th>
+                                <th>Giá</th>
+                                <th>Số lượng</th>
+                                <th>Tổng</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" class="select-item" /></td>
+                                <td>
+                                    <img class="img rounded-circle" src="../img/sample1.jpg" alt="sp1" />
+                                </td>
+                                <td>Áo thun</td>
+                                <td class="price">150000</td>
 
-          <div class="col-md-2 mb-3">
-            <h5>Về chúng tôi</h5>
-            <ul class="list-unstyled">
-              <li><a href="#" class="text-light">Giới thiệu MARC</a></li>
-              <li><a href="#" class="text-light">Tuyển dụng</a></li>
-              <li><a href="#" class="text-light">Cảm hứng thời trang</a></li>
-              <li><a href="#" class="text-light">Danh sách cửa hàng</a></li>
-              <li>
-                <a href="#" class="text-light">Nhượng quyền thương hiệu</a>
-              </li>
-              <li>
-                <a href="#" class="text-light">Khách hàng thân thiết</a>
-              </li>
-              <li><a href="#" class="text-light">Chính sách giao hàng</a></li>
-              <li><a href="#" class="text-light">Chính sách bảo hành</a></li>
-            </ul>
-          </div>
+                                <td>
+                                    <input type="number" value="1" min="1" class="quantity form-control w-50" />
+                                </td>
+                                <td class="subtotal">150000</td>
+                                <td><button class="btn-remove">Xóa</button></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="select-item" /></td>
+                                <td>
+                                    <img class="img rounded-circle" src="../img/sample1.jpg" alt="sp2" />
+                                </td>
+                                <td>Váy</td>
+                                <td class="price">800000</td>
+                                <td>
+                                    <input type="number" value="2" min="1" class="quantity form-control w-50" />
+                                </td>
+                                <td class="subtotal">1600000</td>
+                                <td><button class="btn-remove">Xóa</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="../html/products.html" class="btn btn-outline-shop mt-3">Mua sắm ngay</a>
+                </div>
 
-          <div class="col-md-3 mb-3">
-            <h5>Hỗ trợ khách hàng</h5>
-            <ul class="list-unstyled">
-              <li><a href="#" class="text-light">Liên hệ đến MARC</a></li>
-              <li><a href="#" class="text-light">Câu hỏi thường gặp</a></li>
-              <li>
-                <a href="#" class="text-light">Hướng dẫn tạo tài khoản</a>
-              </li>
-              <li><a href="#" class="text-light">Hướng dẫn đặt hàng</a></li>
-              <li>
-                <a href="#" class="text-light">Mua Online tại cửa hàng</a>
-              </li>
-              <li>
-                <a href="#" class="text-light">Hướng dẫn mua trước trả sau</a>
-              </li>
-              <li>
-                <a href="#" class="text-light">Quy định đổi/trả hàng</a>
-              </li>
-              <li>
-                <a href="#" class="text-light">Hướng dẫn đánh giá sản phẩm</a>
-              </li>
-              <li><a href="#" class="text-light">Hướng dẫn xem ưu đãi</a></li>
-            </ul>
-          </div>
+                <div class="col-lg-4">
+                    <div class="cart-summary">
+                        <h5>Tóm tắt đơn hàng</h5>
+                        <hr />
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Tạm tính:</span>
+                            <strong class="subtotalAmount">1750000</strong>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Phí vận chuyển:</span>
+                            <strong class="shipfee">30000</strong>
+                        </div>
+                        <hr />
+                        <div class="d-flex justify-content-between mb-3">
+                            <span><b>Tổng cộng:</b></span>
+                            <strong class="total text-danger fs-5">1780000</strong>
+                        </div>
+                        <button id="checkout-btn" class="btn btn-checkout w-100 py-2">Thanh toán</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="bg-dark text-light mt-5 pt-4 pb-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <div class="mt-3">
+                            <p>Thương hiệu thời trang Wearly</p>
+                            <p>Địa chỉ: TP.Hồ Chí Minh</p>
+                            <p><a href="#" class="text-light">Chính sách bảo mật</a></p>
+                            <p>
+                                <a href="#" class="text-light">Các điều khoản và điều kiện</a>
+                            </p>
+                        </div>
+                        <div class="mt-2">
+                            <a href="#"><i class="bi bi-facebook text-light me-2"></i></a>
+                            <a href="#"><i class="bi bi-instagram text-light me-2"></i></a>
+                            <a href="#"><i class="bi bi-tiktok text-light me-2"></i></a>
+                            <a href="#"><i class="bi bi-youtube text-light me-2"></i></a>
+                        </div>
+                    </div>
 
-          <div class="col-md-3 mb-3">
-            <h5>Liên lạc</h5>
-            <p>
-              Đặt hàng trực tuyến (8h-21h) <br />
-              <a href="tel:1900636942" class="text-info">1900 636942</a>
-            </p>
-            <p>
-              Chăm sóc khách hàng <br />
-              <a href="tel:1900636940" class="text-info">1900 636940</a>
-            </p>
-            <p>
-              <a href="mailto:support.marc@tmpfashion.vn" class="text-info">support.marc@tmpfashion.vn</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
-  </div>
+                    <div class="col-md-2 mb-3">
+                        <h5>Về chúng tôi</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-light">Giới thiệu MARC</a></li>
+                            <li><a href="#" class="text-light">Tuyển dụng</a></li>
+                            <li><a href="#" class="text-light">Cảm hứng thời trang</a></li>
+                            <li><a href="#" class="text-light">Danh sách cửa hàng</a></li>
+                            <li>
+                                <a href="#" class="text-light">Nhượng quyền thương hiệu</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-light">Khách hàng thân thiết</a>
+                            </li>
+                            <li><a href="#" class="text-light">Chính sách giao hàng</a></li>
+                            <li><a href="#" class="text-light">Chính sách bảo hành</a></li>
+                        </ul>
+                    </div>
 
-  <script src="../js/cart.js"></script>
+                    <div class="col-md-3 mb-3">
+                        <h5>Hỗ trợ khách hàng</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-light">Liên hệ đến MARC</a></li>
+                            <li><a href="#" class="text-light">Câu hỏi thường gặp</a></li>
+                            <li>
+                                <a href="#" class="text-light">Hướng dẫn tạo tài khoản</a>
+                            </li>
+                            <li><a href="#" class="text-light">Hướng dẫn đặt hàng</a></li>
+                            <li>
+                                <a href="#" class="text-light">Mua Online tại cửa hàng</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-light">Hướng dẫn mua trước trả sau</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-light">Quy định đổi/trả hàng</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-light">Hướng dẫn đánh giá sản phẩm</a>
+                            </li>
+                            <li><a href="#" class="text-light">Hướng dẫn xem ưu đãi</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3 mb-3">
+                        <h5>Liên lạc</h5>
+                        <p>
+                            Đặt hàng trực tuyến (8h-21h) <br />
+                            <a href="tel:1900636942" class="text-info">1900 636942</a>
+                        </p>
+                        <p>
+                            Chăm sóc khách hàng <br />
+                            <a href="tel:1900636940" class="text-info">1900 636940</a>
+                        </p>
+                        <p>
+                            <a href="mailto:support.marc@tmpfashion.vn" class="text-info">support.marc@tmpfashion.vn</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../js/cart/storage.js"></script>
+    <script src="../js/cart/render.js"></script>
+    <script src="../js/cart/quantity.js"></script>
+    <script src="../js/cart/remove.js"></script>
+    <script src="../js/cart/main.js"></script>
+    <script src="../js/cart/checkout.js"></script>
 </body>
+
 
 </html>

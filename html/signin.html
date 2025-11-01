@@ -4,15 +4,40 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SIGN UP</title>
+    <title>Wearly-SignIn/Up</title>
     <link rel="stylesheet" href="../css/bootstrap.css" />
-    <script src="../jquery-3.7.1.js"></script>
     <script src="../js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/signin.css">
     <script src="../js/sign.js"></script>
 </head>
 
 <body>
+    <div class="modal" id="datLaiMatKhau">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h5 class="text-center">Đặt lại mật khẩu</h5>
+                    <span class="text-danger" id="error_DatLai"></span>
+                    <form class="form-control">
+                        <span id="error_ID_NhapLai" class="text-danger">*</span>
+                        <input type="text" id="ID_NhapLai" placeholder="ID đăng nhập"
+                            onkeyup="ktraID_NhapLai(this.value)">
+                        <span id="error_MatKhauMoi" class="text-danger">*</span>
+                        <input type="password" id="MatKhauMoi" placeholder="Mật khẩu mới"
+                            onkeyup="ktraMatKhauMoi(this.value)"><br>
+                        <span id="error_NhapLaiMoi" class="text-danger">*</span>
+                        <input type="password" id="NhapLaiMoi" placeholder="Nhập lại mật khẩu mới"
+                            onkeyup="ktraNhapLaiMoi(this.value)"><br>
+                        <input type="button" id="DatLai" class="radius btn btn-dark" value="Đặt lại mật khẩu"
+                            onclick="datLaiMatKhau()">
+                        <input type="submit" id="Huy" class="radius btn btn-outline-dark" data-bs-dismiss="modal"
+                            data-bs-target="#datLaiMatKhau" value="Hủy">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <section>
             <div class="active-box shadow p-4">
@@ -33,48 +58,61 @@
                 <div class="tab-content">
                     <div class="tab-pane fade show active mt-5 mb-5" id="signup">
                         <div>
+                            <span id="error_DangNhap" class="text-danger"></span>
                             <form>
-                                <input type="text" name="email" placeholder="Nhập email hoặc Số điện thoại" />
+                                <span class="text-danger" id="error_ID_DangNhap"></span>
+                                <input type="text" id="ID_DangNhap" name="email"
+                                    placeholder="Nhập email hoặc Số điện thoại" onkeyup="ktraID_DangNhap()" />
                                 <br />
-                                <input type="password" name="pw" placeholder="Mật khẩu" />
-                                <div class="forget-pw">
-                                    <a href="#" id="fp" class="text-decoration-none text-dark">Quên mật khẩu ?</a>
+                                <input type="password" id="MatKhauDN" name="pw" placeholder="Mật khẩu" />
+                                <div class="quenMatKhau">
+                                    <a href="#" id="fp" class="text-decoration-none text-dark" data-bs-toggle="modal"
+                                        data-bs-target="#datLaiMatKhau">
+                                        Quên mật khẩu?</a>
+                                </div>
+                                <div class="d-grid mt-5">
+                                    <button class="radius btn btn-outline-dark" type="button" id="DangNhap"
+                                        onclick="ktraDangNhap()">
+                                        ĐĂNG NHẬP
+                                    </button>
                                 </div>
                             </form>
-                            <div class="d-grid mt-5">
-                                <button type="submit" class="radius btn btn-outline-dark">
-                                    ĐĂNG NHẬP
-                                </button>
-                            </div>
+
                         </div>
                     </div>
 
                     <div class="tab-pane fade mt-5 mb-5" id="signin">
                         <form action="" class="m-3">
                             <span id="error_HoTen" class="text-danger">*</span>
-                            <input type="text" id="HoTen" name="name" placeholder="Nhập tên của bạn"
-                                onkeyup="ktraHoTen()" />
+                            <input type="text" id="HoTen" placeholder="Nhập tên của bạn" onkeyup="ktraHoTen()" />
                             <br />
                             <span id="error_Email" class="text-danger">*</span>
-                            <input type="text" name="email" placeholder="Nhập email hoặc Số điện thoại" />
+                            <input type="text" id="Email" placeholder="Nhập email hoặc Số điện thoại"
+                                onkeyup="ktraEmail()" />
                             <br>
-                            <span id="error_NgaySinh" class="text-danger">*</span>
+
                             <label class="mb-2" for="birthday">Ngày sinh:</label>
-                            <input type="date" name="birthday" /><br />
-                            <span class="text-danger" id="GioiTinh">*</span>
+                            <span id="error_NgaySinh" class="text-danger">*</span>
+                            <input type="date" name="birthday" id="NgaySinh" onchange="ktraNgaySinh()" /><br />
+                            <span class="text-danger" id="error_GioiTinh">*</span>
                             <div class="gender">
                                 <label for="gender">Giới tính:</label>
-                                <input type="radio" name="gender" value="Nam" style="width: 20px" />
+                                <input type="radio" name="gender" id='Nam' onchange="ktraGioiTinh()" value="Nam"
+                                    style="width: 20px" />
                                 <label for="gender">Nam</label>
-                                <input type="radio" name="gender" value="Nữ" style="width: 20px" />
+                                <input type="radio" name="gender" id="Nu" onchange="ktraGioiTinh()" value="Nữ"
+                                    style="width: 20px" />
                                 <label for="gender">Nữ</label> <br />
                             </div>
-                            <span class="text-danger" id="MatKhau">*</span>
-                            <input type="password" name="pw" placeholder="Nhập mật khẩu" />
-                            <span class="text-danger" id="NhapLaiMatKhau">*</span>
-                            <input type="password" name="pw2" placeholder="Nhập lại mật khẩu" />
+                            <span class="text-danger" id="error_MatKhau">*</span>
+                            <input type="password" id="MatKhau" name="pw" placeholder="Nhập mật khẩu"
+                                onkeyup="ktraMatKhau(this.value)" />
+                            <span class="text-danger" id="error_NhapLaiMatKhau">*</span>
+                            <input type="password" id="NhapLaiMatKhau" name="pw2" placeholder="Nhập lại mật khẩu"
+                                onkeyup="ktraNhapLai(this.value)" />
                             <div class="d-grid mt-3">
-                                <button type="submit" class="radius btn btn-outline-dark" onclick="kiemTraDangKy()">
+                                <button type="button" id="DangKy" class="radius btn btn-outline-dark"
+                                    onclick="ktraDangKy()">
                                     ĐĂNG KÝ
                                 </button>
                             </div>

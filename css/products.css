@@ -1,5 +1,18 @@
+*{
+  max-width: 100%;
+}
+.container{
+    width: 100%;
+}
 body{
     background-color: #f8f9fa;
+}
+#productList a{
+  padding: 10px;
+}
+#productList .col-md-3:hover{
+  transition: 0.5s;
+  box-shadow: 1px 1px 1px 1px black;
 }
 header{
   display: flex;
@@ -86,7 +99,9 @@ header .row .col-3{
   align-items: center;
   gap: 8px;
 }
-
+section{
+  width:100%;
+}
 .products{
     margin: 20px 0;
 }

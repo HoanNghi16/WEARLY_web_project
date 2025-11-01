@@ -4,19 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wearly-HomePage</title>
+    <title>Wearly-user</title>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <script src="../js/bootstrap.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/home.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
-    <script type="module" src="../js/homeProduct.js"></script>
+    <link rel="stylesheet" href="../css/user.css">
     <script src="../js/boostUI.js"></script>
+    <script src="../js/user.js"></script>
 </head>
 
-
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid text-center">
         <header>
             <div class="row">
                 <div class="col-3">
@@ -36,113 +34,98 @@
                 </div>
             </div>
         </header>
-        <section class="text-center">
-            <div id="carouselIndicators" class="carousel slide" data-bs-ride="carousel" style="margin-bottom: 25px;">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="0"
-                        class="active"></button>
-                    <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="1"></button>
+        <section class="text-left">
+            <div class="row" style="width:900px; margin:auto; margin-bottom: 50px; margin-top: 50px;">
+                <div class="col-2" style="text-align:left;margin-right: 0px">
+                    <img id="userava" src="../img/icons/user.png" alt="user icon">
                 </div>
-
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="../img/banner1.jpg" class="d-block w-100" alt="Ảnh 1"
-                            style="width: 100%; height: 550px; object-fit: cover;">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../img/banner2.jpg" class="d-block w-100" alt="Ảnh 2"
-                            style="width: 100%; height: 550px; object-fit: cover;">
-                    </div>
+                <div class="col" style="margin-right: 0px;">
+                    <h3 class="userName" id="userName">sample Name</h3>
+                    <p class="userID" id="ID_DangNhap">sample_id</p>
                 </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
-            </div>
-            <div class="products">
-                <div class="row">
-                    <div class="col-12">
-                        <h4>DANH MỤC SẢN PHẨM</h4>
-                    </div>
-                </div>
-                <nav class="product-list">
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <img src="../img/icons/dress.png" class="rounded-circle">
-                            </a>
-                            <span>Váy</span>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <img src="../img/icons/shirt.png" class="rounded-circle">
-                            </a>
-                            <span>Áo</span>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <img src="../img/icons/jacket.png" class="rounded-circle">
-                            </a>
-                            <span>Áo khoác</span>
-                        </li>
-                        <li class="nav-item">
-                            <a href="" class="nav-link">
-                                <img src="../img/icons/pants.png" class="rounded-circle">
-                            </a>
-                            <span>Quần</span>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="banner">
-                <div class="row">
-                    <div class="col">
-                        <img src="../img/banner2.jpg" style="width: 1200px; height: 600px;" class="img-fluid">
-                    </div>
+                <div class="col" style="margin-left: 0px; text-align: left; padding-left: 0px;" id="nutSuaHoTen">
+                    <button class="btn btn-outline-dark" style="padding:5px;" onclick="suaHoTen()">
+                        sửa
+                    </button>
                 </div>
             </div>
-            <div class="show-product">
-                <div class="row">
-                    <div class="col-10">
-                        <h4>SẢN PHẨM NHÀ WEARLY</h4>
-                    </div>
-                    <div class="col-2">
-                        <a href="../html/products.html">Xem tất cả &gt;</a>
-                    </div>
+            <div class="row">
+                <div class="col">
+                    <table class="table" style="width:900px; margin:auto; text-align: left;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h6>Email:</h6>
+                                </td>
+                                <td>
+                                    <h6 id="userEmail">Examplemail@gmail.com</h6>
+                                </td>
+                                <td class="buttonEdit" id="nutSuaEmail">
+                                    <button class="btn btn-outline-dark" onclick="suaEmail()" style="padding:5px;">
+                                        sửa
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h6>Số điện thoại:</h6>
+                                </td>
+                                <td>
+                                    <h6 id="userSDT">0999999999</h6>
+                                </td>
+                                <td class="buttonEdit" id="nutSuaSDT">
+                                    <button class="btn btn-outline-dark" style="padding:5px;" onclick="suaSDT()">
+                                        sửa
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h6>Ngày sinh:</h6>
+                                </td>
+                                <td>
+                                    <h6 id="userNgaySinh">mm/dd/yyyy</h6>
+                                </td>
+                                <td class="buttonEdit" id="nutSuaNgaySinh">
+                                    <button class="btn btn-outline-dark" style="padding:5px;" onclick="suaNgaySinh()">
+                                        sửa
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h6>Giới tính:</h6>
+                                </td>
+                                <td>
+                                    <h6 id="userGioiTinh">Nam</h6>
+                                </td>
+                                <td class="buttonEdit" id="nutSuaGioiTinh">
+                                    <button onclick="suaGioiTinh()" class="btn btn-outline-dark" style="padding:5px;">
+                                        sửa
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h6>Mật khẩu:</h6>
+                                </td>
+                                <td>
+                                    <h6 id="userMatKhau" type="password">abc</h6>
+                                </td>
+                                <td class="buttonEdit" id="nutXemMatKhau">
+                                    <button class="btn btn-outline-dark" id="xem" style="padding:5px;"
+                                        onclick="xemMatKhau()">
+                                        xem
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="row">
-                    <div class="col-3">
-                        <a href="../html/detail.html" id="Product1"></a>
-                    </div>
-                    <div class="col-3">
-                        <a href="../html/detail.html" id="Product2"></a>
-                    </div>
-                    <div class="col-3">
-                        <a href="../html/detail.html" id="Product3"></a>
-                    </div>
-                    <div class="col-3">
-                        <a href="../html/detail.html" id="Product4"></a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-3">
-                        <a href="../html/detail.html" id="Product5"></a>
-                    </div>
-                    <div class="col-3">
-                        <a href="../html/detail.html" id="Product6"></a>
-                    </div>
-                    <div class="col-3">
-                        <a href="../html/detail.html" id="Product7"></a>
-                    </div>
-                    <div class="col-3">
-                        <a href="../html/detail.html" id="Product8"></a>
-                    </div>
+            </div>
+            <div class="row" style="width: 900px; margin:auto; margin-top: 50px;">
+                <div class="col-2">
+                    <button class="btn btn-danger" style="width: 100%;" onclick="DangXuat()">Đăng xuất</button>
                 </div>
             </div>
         </section>
