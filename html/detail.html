@@ -50,15 +50,18 @@
 
         function KiemTraDiaChi() {
             var diaChi = document.getElementById("txtDiaChi").value.trim();
-            if (diaChi.length === 0) {
-                document.getElementById("errDiaChi").innerHTML =
-                    "Vui lòng nhập địa chỉ";
-                return false;
-            } else {
+            var patternDiaChi = /^[0-9]{1,4}[\/0-9A-Za-zÀ-Ỹà-ỹ\s\-]*,\s*[A-Za-zÀ-Ỹà-ỹ\s]+(,\s*[A-Za-zÀ-Ỹà-ỹ\s]+){1,2}$/;
+
+            if (patternDiaChi.test(diaChi)) {
                 document.getElementById("errDiaChi").innerHTML = "";
                 return true;
+            } else {
+                document.getElementById("errDiaChi").innerHTML =
+                    "Địa chỉ không hợp lệ (ví dụ: 12 Nguyễn Văn B, Quận 10, TP.HCM)";
+                return false;
             }
         }
+
 
         function KiemTraEmail() {
             var email = document.getElementById("txtEmail").value.trim();
@@ -92,8 +95,7 @@
         <header>
             <div class="row">
                 <div class="col-3">
-                    <a href="../html/home.html" class="logo"><img src="../img/logo.png" class="logo"
-                            style="width: 100px" /></a>
+                    <a href="../html/home.html" class="logo"><img src="../img/logo.png" class="logo" style="width: 100px" /></a>
                 </div>
                 <div class="col-6">
                     <nav>
@@ -243,8 +245,7 @@
                     <br /><br />
 
                     <label for="DiaChi">Địa chỉ</label><br />
-                    <input type="text" id="txtDiaChi" placeholder="Tên đường/số nhà, Quận/Huyện, Tỉnh/Thành phố"
-                        required onblur="KiemTraDiaChi()" />
+                    <input type="text" id="txtDiaChi" placeholder="Tên đường/số nhà, Quận/Huyện, Tỉnh/Thành phố" required onblur="KiemTraDiaChi()" />
                     <span id="errDiaChi" style="color: red; font-size: 14px"></span>
                     <br /><br />
                 </div>
