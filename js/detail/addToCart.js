@@ -1,3 +1,4 @@
+var currentUser = JSON.parse(localStorage.getItem('currentUser'))
 document.addEventListener("DOMContentLoaded", () => {
     const addToCartBtn = document.querySelector("#giohang .btn-outline-dark");
     if (!addToCartBtn) return;
@@ -8,6 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const price = parseInt(priceText.replace(/[^\d]/g, ""));
         const image = document.querySelector(".col-5 img").src;
         const quantity = parseInt(document.getElementById("quantity").value) || 1;
+        if (currentUser == null){
+            if(window.confirm('Bạn chưa đăng nhập! Vui lòng đăng nhập để sử dụng chức giỏ hàng.')){
+                window.location.href = '/html/signin.html';
+                return false;
+            }
+        }
 
         const product = {
             id: Date.now(),
@@ -18,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         // Lấy danh sách hiện tại từ localStorage
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let cart = JSON.parse(localStorage.getItem(`${currentUser['ID']}cart`)) || [];
 
 
         const existing = cart.find(item => item.name === product.name);
@@ -29,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Lưu lại vào localStorage
-        localStorage.setItem("cart", JSON.stringify(cart));
+        localStorage.setItem(`${currentUser['ID']}cart`, JSON.stringify(cart));
 
 
         alert(" Đã thêm vào giỏ hàng!");

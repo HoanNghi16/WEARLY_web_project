@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!checkoutBtn) return;
 
     checkoutBtn.addEventListener("click", () => {
-        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const cart = JSON.parse(localStorage.getItem(`${currentUser['ID']}cart`)) || [];
 
         if (cart.length === 0) {
             alert("🛒 Giỏ hàng của bạn đang trống!");

@@ -50,36 +50,14 @@ function renderProducts(page) {
     }
 
     pageProducts.forEach((p, index) => {
-<<<<<<< HEAD
-        const col = document.createElement("div");
-=======
         const col = document.createElement("a");
         col.setAttribute("style", "text-decoration: none; color: inherit;");
->>>>>>> 4d9034a747a69d193e2c84833cfbd9356bed7d3d
         col.className = "col-md-3 mb-4 product-item";
         col.innerHTML = `
             <div class="card h-100 shadow-sm product-card" data-id="${p.id}" style="cursor:pointer;">
                 <img src="${p.image}" class="card-img-top"
                     style="width: 100%; height: 300px; object-fit: cover;">
                 <div class="card-body">
-<<<<<<< HEAD
-                    <h5 class="card-title">${truncate(p.name, 30)}</h5>
-                    <p class="card-text text-danger fw-bold">${show_price(p.price)}</p>
-                    <p class="card-text text-muted">${truncate(p.description, 40)}</p>
-                </div>
-            </div>
-        `;
-        productList.appendChild(col);
-        setTimeout(() => col.classList.add("show"), 100 * index);
-    });
-
-    document.querySelectorAll(".product-card").forEach(card => {
-        card.addEventListener("click", () => {
-            const id = card.getAttribute("data-id");
-            window.location.href = `../html/chitietsanpham.html?id=${id}`;
-        });
-    });
-=======
                     <h5 class="card-title">${truncate(p.name, 25)}</h5>
                     <p class="card-text text-danger fw-bold">${show_price(p.price)}</p>
                     <p class="card-text text-muted">${truncate(p.description, 35)}</p>
@@ -93,7 +71,6 @@ function renderProducts(page) {
         productList.appendChild(col);
         setTimeout(() => col.classList.add("show"), 100 * index);
     });
->>>>>>> 4d9034a747a69d193e2c84833cfbd9356bed7d3d
 }
 
 function setupPagination() {
