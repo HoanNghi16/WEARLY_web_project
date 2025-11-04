@@ -22,7 +22,14 @@ function show_price(price) {
 
 function getCategoryFromURL() {
     const params = new URLSearchParams(window.location.search);
-    return params.get("category");
+    let cate = params.get("category")
+    if (cate){
+        document.getElementById("productList").scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        });
+    }
+    return cate;
 }
 
 function getProductsByCategory(category) {

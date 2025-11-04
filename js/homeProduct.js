@@ -40,10 +40,30 @@ function show_product() {
     // Set the anchor href to include the product id so detail page can read it
     slot.setAttribute(
       "href",
-      `../html/detail.html?id=${encodeURIComponent(p.id)}`
+      `../html/detail.htmlid=${encodeURIComponent(p.id)}`
     );
   }
 }
+document.querySelectorAll(".product-list .nav-item").forEach(item => {
+  item.addEventListener("click", e => {
+      let category='';
+      e.preventDefault();
+      const span = item.querySelector("span");
+      if (!span) return;
+      const text = span.textContent.trim().toLowerCase();
+      
+      switch (text) {
+          case "váy": category = "dress"; break;
+          case "áo": category = "shirt"; break;
+          case "áo khoác": category = "jacket"; break;
+          case "quần": category = "pants"; break;
+          default: category = "";
+      }
+      window.location.href = `../html/products.html?category=${category}`
+  });
+});
+
+
 document.addEventListener("DOMContentLoaded", () => {
   show_product();
 });
