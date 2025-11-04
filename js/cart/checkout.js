@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         if (confirmCheckout) {
-            localStorage.removeItem("cart");
+            localStorage.removeItem(`${currentUser['ID']}cart`);
 
 
             alert("Thanh toán thành công! Cảm ơn bạn đã mua hàng.");
