@@ -15,11 +15,11 @@
         function chinhsoluong(n) {
             let s = document.getElementById("quantity");
             let num = Number(s.value);
-            if (num + n >= 0) {
+            if (num + n >= 1) {
                 document.getElementById("quantity").value = num + n;
                 return;
             } else {
-                document.getElementById("quantity").value = 0;
+                document.getElementById("quantity").value = 1;
                 return;
             }
         }

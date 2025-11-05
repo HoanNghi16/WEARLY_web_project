@@ -40,7 +40,7 @@ function show_product() {
     // Set the anchor href to include the product id so detail page can read it
     slot.setAttribute(
       "href",
-      `../html/detail.htmlid=${encodeURIComponent(p.id)}`
+      `../html/detail.html?id=${encodeURIComponent(p.id)}`
     );
   }
 }
