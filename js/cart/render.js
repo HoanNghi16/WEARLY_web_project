@@ -24,7 +24,7 @@ function renderCart() {
         row.dataset.index = index;
         row.innerHTML = `
             <td><input type="checkbox" class="select-item" /></td>
-            <td><img src="${item.image}" class="img rounded-circle" style="width:70px"></td>
+            <td><a href='../html/detail.html?id=${item.id}'><img src="${item.image}" class="img rounded-circle" style="width:70px"></a></td>
             <td>${item.name}</td>
             <td class="price">${item.price.toLocaleString("vi-VN")}đ</td>
             <td><input type="number" class="quantity form-control w-50" value="${item.quantity}" min="1"></td>
