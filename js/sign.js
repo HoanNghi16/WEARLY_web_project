@@ -1,7 +1,7 @@
 //Phần đăng ký và kiểm tra dữ liệu
 //Đăng ký thành công -> lưu thông tin người dùng vào localStorage với key là ID đăng nhập (email hoặc số điện thoại)
 function ktraHoTen(){
-    let ten = /^[A-Z]{1}[a-z]*(\s[A-Z]{1}[a-z]*)*$/;
+    let ten = /^[A-Z]{1}[a-z]*(\s[A-Z]{1}[a-z]*)+$/;
     let input_HoTen = document.getElementById('HoTen').value
     console.log(input_HoTen)
     if (input_HoTen.length == 0){
@@ -19,7 +19,7 @@ function ktraHoTen(){
 }
 
 function ktraEmail(){
-    let email = /^[a-zA-Z0-9._%+-]+@gmail.com$/
+    let email = /^[a-zA-Z0-9._%+-]+\@gmail\.com$/
     let phone = /^0[3-9]{1}[0-9]{8}$/;
     let input_Email = document.getElementById('Email').value;
     if (localStorage.getItem(input_Email)){
